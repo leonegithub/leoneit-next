@@ -10,13 +10,17 @@ import logoLeone from "../../../public/logoLeone.png";
 import { useAuth } from "@/context/AuthContext";
 import "./header.css";
 
+interface Option {
+  label: string;
+  href: string;
+}
 interface HeaderClientProps {
   lang: "it" | "en";
   dict: any;
-  options1: any[];
-  options2: any[];
-  options3: any[];
-  options4: any[];
+  options1: Option[];
+  options2: Option[];
+  options3: Option[];
+  options4: Option[];
   dropdownCompanyLabel: string;
   dropdownOrthodonticsLabel: string;
   dropdownImplantologyLabel: string;
