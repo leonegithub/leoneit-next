@@ -24,8 +24,6 @@ interface HeaderClientProps {
 }
 
 export default function Header({
-  lang,
-  dict,
   options1,
   options2,
   options3,
