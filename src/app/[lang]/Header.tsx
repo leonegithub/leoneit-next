@@ -16,7 +16,6 @@ interface Option {
 }
 interface HeaderClientProps {
   lang: "it" | "en";
-  dict: any;
   options1: Option[];
   options2: Option[];
   options3: Option[];

@@ -22,7 +22,6 @@ export default async function Header({
   return (
     <HeaderComponent
       lang={lang}
-      dict={dict}
       options1={options1}
       options2={options2}
       options3={options3}
