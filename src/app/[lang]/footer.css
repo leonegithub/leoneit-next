@@ -1,0 +1,17 @@
+footer {
+  background-color: var(--colore-primario);
+  min-height: 350px;
+
+  .row {
+    align-items: start;
+  }
+  h4 {
+    color: var(--bianco);
+    font-size: calc(var(--unita-base) * 1.7);
+  }
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--bianco);
+}

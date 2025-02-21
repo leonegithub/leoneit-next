@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --colore-primario: #0d4fd1;
+  --grigio: #f7f9ff;
+  --bianco: #fff;
+  --unita-base: 12px;
+  --grigio-hover: #e0e7ff;
+  --colore-secondario: #e30b21;
+  --margine: calc(var(--unita-base) * 20);
+  --verde: #40c7bc;
+  --altezza-corpo: 800px;
+}
+
+.blue {
+  color: var(--colore-primario);
+}
+
+.white {
+  color: var(--bianco);
+}
+
+.bg-blue {
+  background-color: var(--colore-primario);
+}
+
+.grey {
+  color: var(--grigio);
+}
+
+.bg-grey {
+  background-color: var(--grigio);
+}
+
+body {
+  font-family: neue-haas-grotesk-display !important;
+  background-color: var(--colore-primario);
+}
+
+main {
+  min-height: 700px;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--bianco);
+}
+
+h1 {
+  font-size: calc(var(--unita-base) * 3);
+}
+
+p {
+  font-size: 18px;
+}
+
+.img-container {
+  aspect-ratio: 3/1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+input {
+  border-radius: var(--bs-border-radius) !important;
+  border-color: var(--bs-border-color) !important;
+}
+
+.form-control {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--bs-border-color);
+}
+
+.form-control:focus {
+  border-color: var(--bs-border-color); /* Colore primario per il focus */
+  outline: 0; /* Rimuove l'outline predefinito del browser */
+  box-shadow: 0 0 0 0.25rem var(--bs-focus-ring-color); /* Focus ring */
+}
+
+.mobile-searchbar .input-group {
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 1192px) {
+  header .mobile-searchbar {
+    display: none;
+  }
+}
+
+/* Mobile first: 1/1 aspect ratio */
+.img-container {
+  pointer-events: none;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Tablet: 2/1 aspect ratio for screens 768px and wider */
+@media (min-width: 768px) {
+  .img-container {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* Desktop: 3/1 aspect ratio for screens 1024px and wider */
+@media (min-width: 1024px) {
+  .img-container {
+    aspect-ratio: 3 / 1;
+  }
+}
