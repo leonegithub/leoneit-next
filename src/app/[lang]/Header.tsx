@@ -9,27 +9,42 @@ import Image from "next/image";
 import logoLeone from "../../../public/logoLeone.png";
 import { useAuth } from "@/context/AuthContext";
 import "./header.css";
-import {
-  getOptions1,
-  getOptions2,
-  getOptions3,
-} from "@/components/headerOptions";
 
-export default function Header() {
+interface HeaderClientProps {
+  lang: "it" | "en";
+  dict: any;
+  options1: any[];
+  options2: any[];
+  options3: any[];
+  options4: any[];
+  dropdownCompanyLabel: string;
+  dropdownOrthodonticsLabel: string;
+  dropdownImplantologyLabel: string;
+  dropdownCoursesLabel: string;
+}
+
+export default function Header({
+  lang,
+  dict,
+  options1,
+  options2,
+  options3,
+  options4,
+  dropdownCompanyLabel,
+  dropdownOrthodonticsLabel,
+  dropdownImplantologyLabel,
+  dropdownCoursesLabel,
+}: HeaderClientProps) {
   const [show, setShow] = useState(false);
   const { userId, userData } = useAuth();
-
-  const options1 = getOptions1();
-  const options2 = getOptions2();
-  const options3 = getOptions3();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <header className={`p-5 flex items-center`}>
-        <div className=" logo">
+      <header className="p-5 flex items-center">
+        <div className="logo">
           <Link href={`/`}>
             <Image src={logoLeone} width={150} alt="logo" />
           </Link>
@@ -37,19 +52,28 @@ export default function Header() {
         <nav className="nav-menu flex justify-between">
           <ul className="flex xl:hidden items-center space-x-4">
             <li>
-              <DropdownComponent options={options1} dropdownLabel="Company" />
+              <DropdownComponent
+                options={options1}
+                dropdownLabel={dropdownCompanyLabel}
+              />
             </li>
             <li>
-              <DropdownComponent options={options2} dropdownLabel="Products" />
+              <DropdownComponent
+                options={options2}
+                dropdownLabel={dropdownOrthodonticsLabel}
+              />
             </li>
             <li>
-              <Link href={`/orders`}>Orders</Link>
+              <DropdownComponent
+                options={options3}
+                dropdownLabel={dropdownImplantologyLabel}
+              />
             </li>
             <li>
-              <DropdownComponent options={options3} dropdownLabel="Support" />
-            </li>
-            <li>
-              <Link href={`/events`}>Events</Link>
+              <DropdownComponent
+                options={options4}
+                dropdownLabel={dropdownCoursesLabel}
+              />
             </li>
           </ul>
         </nav>

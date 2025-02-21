@@ -9,6 +9,10 @@ footer {
     color: var(--bianco);
     font-size: calc(var(--unita-base) * 1.7);
   }
+
+  .social-media-wrapper {
+    font-size: 30px;
+  }
 }
 
 footer a {

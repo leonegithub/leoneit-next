@@ -1,51 +1,109 @@
 import Link from "next/link";
+import { getDictionary } from "./dictionaries";
 import "./footer.css";
 
-export default function Footer() {
+export default async function Footer({
+  params,
+}: {
+  params: { lang: "it" | "en" };
+}) {
+  const { lang } = params;
+  const dict = await getDictionary(lang);
   return (
     <footer>
       {/* Widgets - Bootstrap Brain Component */}
       <section className="py-4 py-md-5 py-xl-6 py-xxl-8">
-        <div className="container ">
+        <div className="container">
           <div className="row gy-3">
-            <div className="col-6 col-md-4">
+            <div className="col-6 col-md-3">
               <div className="link-wrapper">
-                <h4 className="mb-3 fw-bold">Services</h4>
+                <h4 className="mb-3 fw-bold">{dict.footer.services}</h4>
                 <ul className="m-0 list-unstyled">
                   <li className="mb-1">
-                    <Link href={"/services/downloads"}>Downloads</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link href={`/services/newlist`}>Newlist</Link>
-                  </li>
-                  {/*  <li className="mb-1">
-                    <Link href={`/services/customer-support`}>
-                      Customer support
+                    <Link href={`/${lang}/servizi/download`}>
+                      {dict.footer.downloads}
                     </Link>
-                  </li> */}
+                  </li>
+                  <li className="mb-1">
+                    <a href="#!">{dict.footer.newslist}</a>
+                  </li>
+                  <li className="mb-1">
+                    <Link href={`/${lang}/servizi/assistenza-clienti`}>
+                      {dict.footer.customer_support}
+                    </Link>
+                  </li>
+                  <li className="mb-1">
+                    <a href="#!">{dict.footer.restricted_area}</a>
+                  </li>
+                  <li className="mb-1">
+                    <Link href={`/${lang}/azienda/whistleblowing`}>
+                      Whistleblowing
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div className="col-6 col-md-4">
+            <div className="col-6 col-md-3">
               <div className="link-wrapper">
-                <h4 className="mb-3 fw-bold">Scientific publications</h4>
+                <h4 className="mb-3 fw-bold">
+                  {dict.footer.scientific_publications}
+                </h4>
                 <ul className="m-0 list-unstyled">
-                  <Link className="mb-1" href={`/products/publications`}>
-                    Orthodontics
-                  </Link>
+                  <li className="mb-1">
+                    <a href="#!">{dict.footer.orthodontics}</a>
+                  </li>
+                  <li className="mb-1">
+                    <a href="#!">{dict.footer.implantology}</a>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div className="col-6 col-md-4">
+            <div className="col-6 col-md-3">
               <div className="link-wrapper">
-                <h4 className="mb-3 fw-bold">Quality</h4>
+                <h4 className="mb-3 fw-bold">{dict.footer.quality}</h4>
                 <ul className="m-0 list-unstyled">
                   <li className="mb-1">
-                    <Link href={`/quality/safety-sheets`}>Safety sheets</Link>
+                    <Link href={`/${lang}/qualita/sistema-di-qualita`}>
+                      {dict.footer.quality_system}
+                    </Link>
                   </li>
                   <li className="mb-1">
-                    <Link href={`/quality/quality-system`}>Quality system</Link>
+                    <Link href={`/${lang}/qualita/schede-di-sicurezza`}>
+                      {dict.footer.safety_sheets}
+                    </Link>
                   </li>
+                  <li className="mb-1">
+                    <Link href={`/${lang}/qualita/istruzioni`}>
+                      {dict.footer.instructions}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-6 col-md-3">
+              <div className="link-wrapper">
+                <h4 className="mb-3 fw-bold">{dict.footer.distributors}</h4>
+                <ul className="m-0 list-unstyled">
+                  {lang === "it" ? (
+                    <>
+                      <li className="mb-1">
+                        <Link href={`/${lang}/distributori/ortodonzia`}>
+                          Ortodonzia
+                        </Link>
+                      </li>
+                      <li className="mb-1">
+                        <Link href={`/${lang}/distributori/implantologia`}>
+                          Implantologia
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <li className="mb-1">
+                      <Link href={`/${lang}/distributori/worldwide`}>
+                        Worldwide
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -58,16 +116,13 @@ export default function Footer() {
           <div className="row align-items-sm-center gy-3">
             <div className="col-12 col-sm-6">
               <div className="link-wrapper" style={{ color: "white" }}>
-                <strong>LeoneAmerica Dental Products, Inc</strong>
+                <strong>Leone S.p.A.</strong>
                 <br />
-                1400 Graves Ave. Unit A | Oxnard, CA 93030
+                Via P. a Quaracchi, 50 - 50019 Sesto Fiorentino, Firenze
                 <br />
-                info@leoneamerica.com
+                P. IVA 01686960483 Uff. Reg. Imprese Firenze n. 01686960483
                 <br />
-                <em>
-                  Sole distributor of Leone SpA orthodontic products in the USA,
-                  Canada, and Puerto Rico
-                </em>
+                <em>Cap. soc. Euro 1.200.000,00 int. vers.</em>
               </div>
             </div>
             <div className="col-12 col-sm-6">

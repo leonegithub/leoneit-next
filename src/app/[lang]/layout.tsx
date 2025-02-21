@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "./Header.server";
 import Footer from "./Footer";
 import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ lang: "it-IT" }, { lang: "en" }];
+  return [{ lang: "it" }, { lang: "en" }];
 }
 
 export default async function RootLayout({
@@ -21,10 +21,13 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: "it-IT" | "en" }>;
+  params: Promise<{ lang: "it" | "en" }>;
 }>) {
+  // Risolvi params per poterli passare ai componenti server
+  const resolvedParams = await params;
+
   return (
-    <html lang={(await params).lang}>
+    <html lang={resolvedParams.lang}>
       <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
         <link
@@ -50,10 +53,11 @@ export default async function RootLayout({
         <Analytics />
         <AuthProvider>
           <SpeedInsights />
-          <Header />
+          {/* Passa i params risolti al componente server Header */}
+          <Header params={resolvedParams} />
           {/* <Chatbot /> */}
           <main>{children}</main>
-          <Footer />
+          <Footer params={resolvedParams} />
         </AuthProvider>
       </body>
     </html>
