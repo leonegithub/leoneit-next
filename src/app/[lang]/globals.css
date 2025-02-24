@@ -47,7 +47,7 @@ main {
 }
 
 h1 {
-  font-size: calc(var(--unita-base) * 3);
+  font-size: calc(var(--unita-base) * 4);
 }
 
 p {

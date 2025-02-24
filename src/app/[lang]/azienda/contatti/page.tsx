@@ -4,6 +4,7 @@ import Button from "@/components/button";
 import LoadingButton from "@/components/LoadingButton";
 import { ToastContainer, toast } from "react-toastify";
 import React, { useState, FormEvent } from "react";
+import "./style.css";
 
 const Contatti = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -57,11 +58,11 @@ const Contatti = () => {
 
   return (
     <>
-      <div className="container mx:auto">
+      <div className="contatti container mx:auto">
         <h1 className="py-4 blue">Contattaci</h1>
         <div className="row py-4 ">
           <div className="col-sm-6 col-12">
-            <h2 className="blue font-bold w-400 pb-4">Leone S.p.A. </h2>
+            <h2 className="blue sigla font-bold w-400 pb-4">Leone S.p.A. </h2>
           </div>
           <div className="col-sm-6 col-12">
             <div className="upper">
