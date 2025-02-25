@@ -1,0 +1,30 @@
+.undertitle {
+  font-size: 22px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.section-storia {
+  margin-top: calc(var(--unita-base) * 5);
+
+  #trenta {
+    padding-top: calc(var(--unita-base) * 5);
+  }
+  .italic {
+    margin: calc(var(--unita-base) * 2) 0;
+    font-style: italic;
+  }
+  .images {
+    display: flex;
+    justify-content: center;
+    margin: calc(var(--unita-base) * 1) 0;
+  }
+
+  .text {
+    margin: calc(var(--unita-base) * 2) 0;
+  }
+}
+
+.section-storia:last-of-type {
+  margin-bottom: calc(var(--unita-base) * 10);
+}
