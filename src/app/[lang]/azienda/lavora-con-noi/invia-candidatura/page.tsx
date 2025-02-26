@@ -938,12 +938,13 @@ const InviaCandidatura: React.FC = () => {
                       </strong>
                     </label>
                     <div>
-                      Ai sensi dell'art.13 del Regolamento UE 2016/679 La
+                      Ai sensi dell&apos;art.13 del Regolamento UE 2016/679 La
                       informiamo che i suoi dati sono trattati nel rispetto
                       della normativa per la tutela dei dati personali, per
                       finalità contrattuali ed amministrative. Tali dati sono
-                      trattati con l'osservanza di ogni misura cautelativa sulla
-                      sicurezza e riservatezza. Leggi l'informativa completa
+                      trattati con l&apos;osservanza di ogni misura cautelativa
+                      sulla sicurezza e riservatezza. Leggi l&apos;informativa
+                      completa
                     </div>
                     <ErrorMessage
                       name="acconsento"
