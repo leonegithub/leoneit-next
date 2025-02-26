@@ -6,6 +6,16 @@ import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
 
+interface Position {
+  id: string;
+  titolo: string;
+  descrizione: string;
+}
+
+interface ApiResponse {
+  ReturnedObject: Position[];
+}
+
 export default function PositionDetail() {
   const params = useParams();
   const id = params.id as string;
@@ -13,13 +23,7 @@ export default function PositionDetail() {
 
   const [position, setPosition] = useState<Position | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  interface Position {
-    id: string;
-    titolo: string;
-    descrizione: string;
-  }
+  const [error, setError] = useState<string | null>(null);
 
   const handleApplication = (id: string) => {
     router.push(`/it/azienda/lavora-con-noi/invia-candidatura?id=${id}`);
@@ -38,11 +42,11 @@ export default function PositionDetail() {
               },
             }
           );
-          const data = await response.json();
+          const data: ApiResponse = await response.json();
           console.log(data.ReturnedObject);
           if (data && data.ReturnedObject) {
             const position: Position | undefined = data.ReturnedObject.find(
-              (item: { id: string }) => item.id.toString() === id
+              (item) => item.id.toString() === id
             );
             setPosition(position || null);
           } else {
@@ -50,7 +54,11 @@ export default function PositionDetail() {
           }
         } catch (error) {
           console.log("Errore durante la chiamata API: ", error);
-          setError((error as any).message);
+          if (error instanceof Error) {
+            setError(error.message);
+          } else {
+            setError("Errore sconosciuto");
+          }
         } finally {
           setLoading(false);
         }
