@@ -42,6 +42,41 @@ const InviaCandidatura: React.FC = () => {
     acconsento: false,
     curriculum: null,
   };
+
+  interface formValues {
+    nome: string;
+    cognome: string;
+    nazionalita: string;
+    data_nascita: string;
+    codice_fiscale: string;
+    categoria_protetta: number;
+    citta: string;
+    indirizzo: string;
+    provincia: string;
+    cap: string;
+    telefono: string;
+    email: string;
+    istr_secondaria: string;
+    istr_secondaria_data: string;
+    istr_superiore: string;
+    istr_superiore_data: string;
+    lingua_inglese: string;
+    lingua_spagnolo: string;
+    lingua_francese: string;
+    lingua_tedesco: string;
+    lingua_altra: string;
+    info_certificazioni: string;
+    info_gestionale: string;
+    occ_attuale: string;
+    occ_azienda: string;
+    occ_qualifica: string;
+    occ_contratto: string;
+    occ_descrizione: string;
+    asp_salario: string;
+    acconsento: boolean;
+    curriculum: File | null;
+  }
+
   const searchParams = useSearchParams(); // Usa useSearchParams per ottenere i parametri della query string
   const id = searchParams.get("id"); // Ottieni l'ID dalla query string
   const [isMounted, setIsMounted] = useState(false);
@@ -227,13 +262,13 @@ const InviaCandidatura: React.FC = () => {
   }, [isMounted]);
 
   const onSubmit = async (
-    values: any,
+    values: formValues,
     {
       setSubmitting,
       setStatus,
     }: {
       setSubmitting: (isSubmitting: boolean) => void;
-      setStatus: (status: any) => void;
+      setStatus: (status: { global?: string; success?: string }) => void;
     }
   ) => {
     const formData = new FormData();
