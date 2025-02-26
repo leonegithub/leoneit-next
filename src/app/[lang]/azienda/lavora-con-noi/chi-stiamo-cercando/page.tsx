@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Spinner from "@/components/spinner";
 import Link from "next/link";
 
-type Position = {
+interface Position {
   id: number;
   titolo: string;
-};
+}
 
 export default function chiStiamoCercando() {
   const apiUrl =
