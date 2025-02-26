@@ -5,7 +5,7 @@ import Button from "@/components/button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import parse from "html-react-parser";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import LoadingButton from "@/components/LoadingButton";
 
 const InviaCandidatura: React.FC = () => {
@@ -77,8 +77,8 @@ const InviaCandidatura: React.FC = () => {
     curriculum: File | null;
   }
 
-  const searchParams = useSearchParams(); // Usa useSearchParams per ottenere i parametri della query string
-  const id = searchParams.get("id"); // Ottieni l'ID dalla query string
+  const params = useParams();
+  const id = params.id as string;
   const [isMounted, setIsMounted] = useState(false);
   const [defaultValues, setDefaultValues] = useState(initialValues);
 
