@@ -9,7 +9,7 @@ interface Position {
   titolo: string;
 }
 
-export default function chiStiamoCercando() {
+export default function ChiStiamoCercando() {
   const apiUrl =
     "https://php.leone.it/api/GetPosizioni.php?lingua=IT&stato=aperto";
   const [, setError] = useState<boolean | null>(null);
