@@ -14,7 +14,7 @@ export default function lavoraConNoi() {
         <p>
           {" "}
           Leone S.P.A. si caratterizza per la sua storia ed esperienza, da
-          sempre orientata all'innovazione, la qualit&agrave; e la
+          sempre orientata all&rsquo;innovazione, la qualit&agrave; e la
           professionalit&agrave;, cosa che ci rende un&rsquo;eccellenza nel
           nostro settore.
           <br />
