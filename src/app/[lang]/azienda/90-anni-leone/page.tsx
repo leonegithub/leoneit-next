@@ -3,7 +3,6 @@ import { getDictionary } from "../../dictionaries";
 import Link from "next/link";
 import globalIdentity from "./global_identity.jpg";
 import ninety from "./video_90_anni.jpg";
-import "./style.css";
 
 export default async function anniLeone({
   params,

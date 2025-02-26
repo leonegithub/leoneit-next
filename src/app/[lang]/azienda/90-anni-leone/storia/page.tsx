@@ -43,7 +43,7 @@ export default async function Storia({
             {dict["90anni"].storia.title1}
           </h1>
           <p className="text pb-4">{dict["90anni"].storia.text1}</p>
-          <div className="images">
+          <div>
             <Image src={foto1} alt="immagine-1"></Image>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default async function Storia({
           </h1>
           <p className="text">{dict["90anni"].storia.text2}</p>
           <p className="italic pb-4">{dict["90anni"].storia.italic1}</p>
-          <div className="images">
+          <div>
             <Image src={foto2} alt="immagine-1"></Image>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default async function Storia({
           </h1>
           <div className="italic">{dict["90anni"].storia.italic2}</div>
           <div className="text pb-4">{dict["90anni"].storia.text3}</div>
-          <div className="images">
+          <div>
             <Image src={foto3} alt="immagine-2"></Image>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default async function Storia({
             {dict["90anni"].storia.title5}
           </h1>
           <p className="text pb-4">{dict["90anni"].storia.text5}</p>
-          <div className="images">
+          <div>
             <Image src={foto5} alt="immagine-4"></Image>
           </div>
         </div>
