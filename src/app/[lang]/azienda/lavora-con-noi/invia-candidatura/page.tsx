@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Button from "@/components/button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ToastContainer, toast } from "react-toastify";
 import parse from "html-react-parser";
-import axios from "axios";
 import { useParams } from "next/navigation";
 import LoadingButton from "@/components/LoadingButton";
 
@@ -79,8 +79,11 @@ const InviaCandidatura: React.FC = () => {
 
   const params = useParams();
   const id = params.id as string;
-  const [isMounted, setIsMounted] = useState(false);
-  const [defaultValues, setDefaultValues] = useState(initialValues);
+
+  const [formStatus] = useState<{
+    global?: string;
+    success?: string;
+  } | null>(null);
 
   const options1 = {
     liceo: [
@@ -251,7 +254,7 @@ const InviaCandidatura: React.FC = () => {
     { value: "studente", label: "Studente" },
   ];
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (!isMounted) {
       const storedValues = localStorage.getItem("formData");
       if (storedValues) {
@@ -259,7 +262,18 @@ const InviaCandidatura: React.FC = () => {
       }
       setIsMounted(true);
     }
-  }, [isMounted]);
+  }, [isMounted]); */
+
+  useEffect(() => {
+    if (formStatus?.global) {
+      toast.error(parse(formStatus.global));
+    }
+    if (formStatus?.success) {
+      toast.success(
+        "Grazie per aver inviato la tua candidatura! Riceverai un feedback al più presto."
+      );
+    }
+  }, [formStatus]);
 
   const onSubmit = async (
     values: formValues,
@@ -290,33 +304,34 @@ const InviaCandidatura: React.FC = () => {
     }
 
     // salva i valori nel local storage
-    localStorage.setItem("formData", JSON.stringify(values));
+    /* localStorage.setItem("formData", JSON.stringify(values)); */
 
     try {
-      const response = await axios.post(
+      const response = await fetch(
         "https://php.leone.it/api/SendCandidature.php",
-        formData,
         {
           headers: {
             Authorization:
               "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
           },
+          body: formData,
+          method: "POST",
         }
       );
 
-      if (response.data.ExitCode === 0) {
-        setStatus({ global: "", success: response.data.ReturnedObject });
-        console.log(response.data);
+      const result = await response.json();
+      if (result.ExitCode === 0) {
+        setStatus({ global: "", success: result.ReturnedObject });
+        console.log(result);
       } else {
-        setStatus({ global: response.data.ReturnedError.join("<br/>") });
-        console.log(response.data.ReturnedError);
+        setStatus({ global: result.ReturnedError.join("<br/>") });
+        console.log(result.ReturnedError);
       }
     } catch (error) {
       console.error("Error:", error);
       setStatus({ global: "Submission failed. Please try again." });
     } finally {
       setSubmitting(false);
-      localStorage.clear();
     }
   };
 
@@ -324,11 +339,11 @@ const InviaCandidatura: React.FC = () => {
     <div className="container jumbo">
       <h1 className=" py-3 blue font-bold">Invia la tua candidatura</h1>
       <Formik
-        initialValues={defaultValues}
+        initialValues={initialValues}
         onSubmit={onSubmit}
         enableReinitialize={true}
       >
-        {({ isSubmitting, setFieldValue, status }) => (
+        {({ isSubmitting, setFieldValue }) => (
           <Form>
             <div className="dati-anagrafici">
               <h4 className="mb-3">Dati anagrafici</h4>
@@ -894,7 +909,6 @@ const InviaCandidatura: React.FC = () => {
             </div>
 
             <div className="curriculum">
-              <h4 className="my-4">Curriculum</h4>
               <div className="row mb-3">
                 <div className="col-12">
                   <label htmlFor="curriculum" className="form-label">
@@ -956,28 +970,13 @@ const InviaCandidatura: React.FC = () => {
               </div>
             </div>
 
-            {/* messaggi di errore */}
-            {status?.global && (
-              <div className="error-message text-center text-danger mb-3">
-                {parse(status.global)}
-              </div>
-            )}
-
-            {/* messaggi di successo */}
-
-            {status?.success && (
-              <div className="success-message text-center text-success mb-3">
-                Grazie per aver inviato la tua candidatura! Riceverai un
-                feedback al più presto.
-              </div>
-            )}
-
-            <div className="text-center">
+            <div>
               {isSubmitting ? <LoadingButton /> : <Button testo="Invia" />}
             </div>
           </Form>
         )}
       </Formik>
+      <ToastContainer />
     </div>
   );
 };
