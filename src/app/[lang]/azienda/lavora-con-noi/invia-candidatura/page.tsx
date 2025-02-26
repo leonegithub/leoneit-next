@@ -6,7 +6,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import parse from "html-react-parser";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-import { useRef } from "react";
 import LoadingButton from "@/components/LoadingButton";
 
 const InviaCandidatura: React.FC = () => {
@@ -217,42 +216,6 @@ const InviaCandidatura: React.FC = () => {
     { value: "studente", label: "Studente" },
   ];
 
-  const validate = (values: any) => {
-    const errors: any = {};
-
-    if (!values.nome) errors.nome = "Il campo non può essere vuoto.";
-    if (!values.cognome) errors.cognome = "Il campo non può essere vuoto.";
-    if (!values.nazionalita)
-      errors.nazionalita = "Il campo non può essere vuoto.";
-    if (!values.data_nascita)
-      errors.data_nascita = "Il campo non può essere vuoto.";
-    if (!values.codice_fiscale)
-      errors.codice_fiscale = "Il campo non può essere vuoto.";
-    else if (
-      !/^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$/.test(
-        values.codice_fiscale
-      )
-    ) {
-      if (values.codice_fiscale.length >= 16)
-        errors.codice_fiscale = "Formato non valido.";
-    }
-    if (!values.categoria_protetta)
-      errors.categoria_protetta = "Il campo non può essere vuoto.";
-    if (!values.citta) errors.citta = "Il campo non può essere vuoto.";
-    if (!values.indirizzo) errors.indirizzo = "Il campo non può essere vuoto.";
-    if (!values.provincia) errors.provincia = "Il campo non può essere vuoto.";
-    if (!values.cap) errors.cap = "Il campo non può essere vuoto.";
-    if (!values.telefono) errors.telefono = "Il campo non può essere vuoto.";
-    if (!values.email) errors.email = "Il campo non può essere vuoto.";
-    else if (!/\S+@\S+\.\S+/.test(values.email))
-      errors.email = "Formato non valido.";
-    if (!values.istr_secondaria)
-      errors.istr_secondaria = "Il campo non può essere vuoto.";
-    if (!values.occ_attuale)
-      errors.occ_attuale = "Il campo non può essere vuoto.";
-    return errors;
-  };
-
   useEffect(() => {
     if (!isMounted) {
       const storedValues = localStorage.getItem("formData");
@@ -300,7 +263,8 @@ const InviaCandidatura: React.FC = () => {
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            Authorization:
+              "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
           },
         }
       );
@@ -326,7 +290,6 @@ const InviaCandidatura: React.FC = () => {
       <h1 className=" py-3 blue font-bold">Invia la tua candidatura</h1>
       <Formik
         initialValues={defaultValues}
-        validate={validate}
         onSubmit={onSubmit}
         enableReinitialize={true}
       >
