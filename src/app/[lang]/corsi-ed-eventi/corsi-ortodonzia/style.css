@@ -1,0 +1,59 @@
+.ortodonzia-corsi {
+  .jumbotron {
+    min-height: 400px;
+    background-color: var(--colore-primario);
+    margin-bottom: calc(var(--unita-base) * 5);
+  }
+  .container {
+    margin-bottom: calc(var(--unita-base) * 5);
+    padding-bottom: calc(var(--unita-base) * 5);
+  }
+
+  /* .loaded {
+      background-color: var(--grigio);
+    } */
+
+  .corso-top .titolo {
+    font-weight: 700;
+    color: var(--colore-primario);
+  }
+
+  .corso-singolo {
+    background-color: var(--bianco);
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    /*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    justify-content: space-between;
+  }
+
+  .corso-immagine {
+    margin-right: calc(var(--unita-base) * 2);
+    margin-bottom: calc(var(--unita-base) * 2);
+  }
+
+  /*  .corso-singolo:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    } */
+}
+
+@media (min-width: 768px) {
+  .corso-singolo {
+    display: flex; /* Use flex for larger screens */
+    flex-direction: row; /* Align items side by side */
+    justify-content: space-between;
+  }
+
+  .corso-immagine {
+    width: 200px; /* Set a specific width for the image container */
+
+    margin-bottom: calc(var(--unita-base) * 2);
+  }
+
+  .corso-desc {
+    flex: 1; /* Allow the description to take the remaining space */
+  }
+}

@@ -35,13 +35,12 @@
     },
     "courses_events": {
       "label": "Corsi ed eventi",
-      "iso": "ISO",
-      "orthodontics_courses": "Corsi di ortodonzia",
       "implantology_courses": "Corsi implantologia",
-      "live_days": "Giornate live",
+      "orthodontics_courses": "Corsi di ortodonzia",
       "events": "Eventi",
-      "speakers": "Relatori",
-      "educational_videos": "Video formativi"
+      "iso": "ISO",
+      "live_days": "Giornate live",
+      "speakers": "Relatori"
     }
   },
   "home": {

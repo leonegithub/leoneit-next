@@ -38,7 +38,7 @@ export const getOptions1 = async ({
   ];
 };
 
-export const getOptions2 = async ({
+export const getOptions4 = async ({
   params,
 }: {
   params: Promise<{ lang: "it" | "en" }>;
@@ -60,10 +60,6 @@ export const getOptions2 = async ({
       href: getLocalizedHref(lang, "/corsi-ed-eventi/corsi-implantologia"),
     },
     {
-      label: dict.header.courses_events.live_days,
-      href: getLocalizedHref(lang, "/corsi-ed-eventi/giornate-live"),
-    },
-    {
       label: dict.header.courses_events.events,
       href: getLocalizedHref(lang, "/corsi-ed-eventi/eventi"),
     },
@@ -71,14 +67,10 @@ export const getOptions2 = async ({
       label: dict.header.courses_events.speakers,
       href: getLocalizedHref(lang, "/corsi-ed-eventi/relatori"),
     },
-    {
-      label: dict.header.courses_events.educational_videos,
-      href: getLocalizedHref(lang, "/corsi-ed-eventi/video-formativi"),
-    },
   ];
 };
 
-export const getOptions3 = async ({
+export const getOptions2 = async ({
   params,
 }: {
   params: Promise<{ lang: "it" | "en" }>;
@@ -126,7 +118,7 @@ export const getOptions3 = async ({
   ];
 };
 
-export const getOptions4 = async ({
+export const getOptions3 = async ({
   params,
 }: {
   params: Promise<{ lang: "it" | "en" }>;
