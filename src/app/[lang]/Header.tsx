@@ -27,6 +27,7 @@ interface HeaderClientProps {
 }
 
 export default function Header({
+  lang,
   options1,
   options2,
   options3,
@@ -46,7 +47,7 @@ export default function Header({
     <>
       <header className="p-5 flex items-center">
         <div className="logo">
-          <Link href={`/`}>
+          <Link href={`/${lang}`}>
             <Image src={logoLeone} width={150} alt="logo" />
           </Link>
         </div>
@@ -79,14 +80,14 @@ export default function Header({
           </ul>
         </nav>
         {userId ? (
-          <Link href="/personal-area">
-            <div className="hidden xl:flex blue flex items-center">
+          <Link href={`/${lang}/personal-area`}>
+            <div className="flex xl:hidden blue flex items-center">
               {userData && `${userData.Nome} ${userData.Cognome}`}
             </div>
           </Link>
         ) : (
-          <Link href="/login">
-            <div className="hidden xl:flex blue flex items-center">
+          <Link href={`/${lang}/login`}>
+            <div className="flex xl:hidden blue items-center">
               Register / Login
             </div>
           </Link>
@@ -113,10 +114,10 @@ export default function Header({
                   />
                 </li>
                 <li>
-                  <Link href={`/orders`}>Orders</Link>
+                  <Link href={`/${lang}/orders`}>Orders</Link>
                 </li>
                 <li>
-                  <Link href={`/events`}>Events</Link>
+                  <Link href={`/${lang}/events`}>Events</Link>
                 </li>
               </ul>
             </nav>

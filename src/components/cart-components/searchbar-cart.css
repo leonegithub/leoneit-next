@@ -1,0 +1,17 @@
+.searchbar {
+  border: 0;
+  background-color: var(--grigio) !important;
+  border-radius: 50px;
+  flex-wrap: nowrap;
+  padding: 5px;
+}
+
+#lens {
+  background-color: var(--grigio);
+  border-radius: 0 50px 50px 0;
+  color: var(--colore-primario);
+}
+
+input {
+  width: 100%;
+}

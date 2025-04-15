@@ -1,0 +1,47 @@
+.iso-info {
+  .carosello img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sezione-uno,
+  .sezione-due {
+    margin: calc(var(--unita-base) * 5) 0;
+  }
+
+  .carosello {
+    margin: calc(var(--unita-base) * 5) 0;
+    .carousel-inner {
+      height: 600px;
+    }
+  }
+
+  .iso-contatti {
+    height: 500px;
+    .left {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-height: 100%;
+      font-size: calc(var(--unita-base) * 2);
+      background-color: var(--grigio);
+    }
+
+    .right {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    .iso-logo {
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    display: none;
+  }
+}
