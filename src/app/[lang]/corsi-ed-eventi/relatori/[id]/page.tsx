@@ -14,9 +14,7 @@ interface Relatore {
   // aggiungi altri campi se servono
 }
 
-export default function RelatoreDetail({
-  params,
-}: {
+export default function RelatoreDetail({}: {
   params: Promise<{ lang: "en" | "it" }>;
 }) {
   const { id } = useParams();
