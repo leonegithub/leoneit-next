@@ -54,7 +54,7 @@ export default function Iso() {
           </p>
         </div>
         <div className="sezione-due">
-          <h2 className="ads">Struttura all'avanguardia</h2>
+          <h2 className="ads">Struttura all&apos;avanguardia</h2>
           <p>
             Il primo piano, oltre ad accogliere i locali riservati ai servizi di
             ricevimento e di segreteria, è completamente dedicato alle aule

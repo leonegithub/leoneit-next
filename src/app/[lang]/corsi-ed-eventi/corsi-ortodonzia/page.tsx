@@ -5,7 +5,7 @@ import CourseCard, { Corso } from "@/components/CourseCard";
 import "./style.css";
 import Spinner from "@/components/spinner";
 
-export default function corsiOrtodonzia() {
+export default function CorsiOrtodonzia() {
   const [data, setData] = useState<Corso[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
