@@ -1,6 +1,7 @@
 //// filepath: /src/context/AuthContext.tsx
 "use client";
 
+import { getCookie } from "@/app/[lang]/login/page";
 import {
   createContext,
   useContext,
@@ -31,11 +32,16 @@ const AuthContext = createContext<AuthContextType>({
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [userId, setUserId] = useState<string | null>(null);
   const [userData, setUserData] = useState<User | null>(null);
+  const [, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    const cookieUserId = getCookie("idUser");
+    if (cookieUserId) {
+      setUserId(cookieUserId);
+    } else {
       setUserId(localStorage.getItem("userId"));
     }
+    setIsLoading(false);
   }, []);
 
   return (
