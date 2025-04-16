@@ -8,10 +8,6 @@
   }
 }
 
-h1 {
-  font-size: calc(var(--unita-base) * 5);
-}
-
 .card-title {
   font-size: calc(var(--unita-base) * 2);
 }

@@ -133,7 +133,7 @@ const Cart: React.FC<CartComponentProps> = ({ searchParams }) => {
             <Pagination page={page} setPage={setPage} totalPages={totalPages} />
           </>
         ) : (
-          <h1>No elements found</h1>
+          <h2>No elements found</h2>
         )}
       </div>
       <CartComponent />
