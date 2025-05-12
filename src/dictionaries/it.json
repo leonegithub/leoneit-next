@@ -199,6 +199,28 @@
     "copyright": "© 2024 Leone SpA. Tutti i Diritti Riservati."
   },
 
+  "login": {
+    "title": "Entra nel tuo account personale Leone"
+  },
+
+  "register": {
+    "title": "Crea il tuo account Leone",
+    "name": "Nome",
+    "cognome": "Cognome",
+    "attivita": "Attività Commerciale (opzionale)",
+    "paese": "Seleziona Paese",
+    "indirizzo": "Indirizzo",
+    "cap": "Cap",
+    "citta": "Città",
+     "professione": {
+      "title": "Professione",
+      "clinica": "CLINICA DENTALE",
+      "dentista": "DENTISTA",
+      "laboratorio": "LABORATORIO"
+    },
+    "registrati": "Registrati"
+  },
+
   "cookiePolicyTitle": "Cookie policy",
   "cookiePolicyDescription": "Leone S.p.a., con sede legale a Sesto Fiorentino (FI), Via P. a Quaracchi, n° 50, P. IVA n° 01686960483, in qualità di Titolare del trattamento dei dati, tramite il legale rappresentante pro tempore, informa i visitatori del sito www.leone.it – ai sensi e per gli effetti dell’articolo 13 del Regolamento UE 2016/679 (Regolamento Generale sulla Protezione dei Dati, di seguito GDPR) – circa il tipo di cookie utilizzati e le finalità perseguite attraverso le informazioni così acquisite.",
 

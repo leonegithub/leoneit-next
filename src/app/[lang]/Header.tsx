@@ -45,10 +45,10 @@ export default function Header({
 
   return (
     <>
-      <header className="p-5 flex items-center">
+      <header className="px-5 flex items-center">
         <div className="logo">
           <Link href={`/${lang}`}>
-            <Image src={logoLeone} width={150} alt="logo" />
+            <Image src={logoLeone} width={125} alt="logo" />
           </Link>
         </div>
         <nav className="nav-menu flex justify-between">

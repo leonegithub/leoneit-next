@@ -192,6 +192,29 @@
     "worldwide": "Worldwide distributors"
   },
 
+  "login": {
+    "title": "Login into your personal Leone account"
+  },
+
+
+  "register": {
+    "title": "Create your Leone account",
+    "name": "Name",
+    "cognome": "Surname",
+    "attivita": "Business Name (optional)",
+    "paese": "Select Country",
+    "indirizzo": "Address",
+    "cap": "Zip Code",
+    "citta": "City",
+    "professione": {
+      "title": "Profession",
+      "clinica": "DENTAL CLINIC",
+      "dentista": "DENTIST",
+      "laboratorio": "LABORATORY"
+    },
+    "registrati": "Register"
+  },
+
   "cookiePolicyTitle": "Cookie Policy",
   "cookiePolicyDescription": "Leone S.p.a., headquartered in Sesto Fiorentino (FI), Via P. a Quaracchi, n° 50, VAT n° 01686960483, as the Data Controller through the legal representative pro tempore, informs visitors of the site www.leone.it – pursuant to and for the purposes of Article 13 of Regulation EU 2016/679 (General Data Protection Regulation, hereafter GDPR) – about the type of cookies used and the purposes pursued through the information thus acquired.",
 

@@ -4,21 +4,22 @@ import React, { useState } from "react";
 import Link from "next/link";
 import LoadingButton from "./LoadingButton";
 import ErrorMessage from "./errorMessage";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
-const LoginForm = () => {
+function LoginForm({ lang }: { lang: "it" | "en" }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [dict, setDict] = useState<any>(null);
   const router = useRouter();
-  const params = useParams();
-  const lang =
-    typeof params.lang === "string"
-      ? params.lang
-      : Array.isArray(params.lang)
-      ? params.lang[0]
-      : "it";
   const { setUserId } = useAuth();
+
+  React.useEffect(() => {
+    getDictionary(lang).then(setDict);
+  }, [lang]);
+
+  if (!dict) return null; // oppure uno spinner
 
   const handleLogin = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -29,35 +30,30 @@ const LoginForm = () => {
     const form = event.currentTarget.closest("form") as HTMLFormElement;
     const formData = new FormData(form);
 
-    try {
-      fetch("https://php.leone.it/api/ws_leone/LogUser.php", {
-        method: "POST",
-        headers: {
-          Authorization:
-            "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
-        },
-        body: formData,
+    fetch("https://php.leone.it/api/ws_leone/LogUser.php", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
+      },
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.ExitCode === 0) {
+          const idUser = data.ReturnedObject.IDUser;
+          setUserId(idUser);
+          document.cookie = `idUser=${idUser}; path=/; max-age=86400`;
+          router.push(`/${lang}/personal-area`);
+        } else {
+          setErrorMessage(data.ReturnedError.join(", "));
+        }
       })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.ExitCode === 0) {
-            const idUser = data.ReturnedObject.IDUser;
-            setUserId(idUser);
-            document.cookie = `idUser=${idUser}; path=/; max-age=86400`;
-            router.push(`/${lang}/personal-area`);
-          } else {
-            setErrorMessage(data.ReturnedError.join(", "));
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          setErrorMessage("An error occurred. Please try again.");
-        })
-        .finally(() => setIsLoading(false));
-    } catch (error) {
-      console.error("Error:", error);
-      setIsLoading(false);
-    }
+      .catch((error) => {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred. Please try again.");
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const togglePasswordType = (
@@ -76,11 +72,12 @@ const LoginForm = () => {
       togglePasswordIcon.classList.add("fa-eye");
     }
   };
+
   return (
     <div className="container">
       <div className="max-w-5xl  p-6">
         <h3 className="mb-6 text-xl font-semibold">
-          Login to your personal Leone account
+          {dict.login.title}
         </h3>
         <form>
           <div className="mb-4">
@@ -121,25 +118,48 @@ const LoginForm = () => {
             )}
           </div>
         </form>
-        <p className="text-sm mb-2">
-          If you do not yet have a Leone account (symposium.leone.it,
-          3dleone.it),{" "}
-          <Link className="blue hover:underline" href={`/${lang}/register`}>
-            register now&nbsp;
-          </Link>
-          to have access to our services.
-        </p>
-        <p className="text-sm">
-          <Link className="blue hover:underline" href={`/${lang}/reset`}>
-            Did you forget your password?
-          </Link>
-        </p>
-        <p className="error-message">
-          {errorMessage && <ErrorMessage message={errorMessage} />}
-        </p>
+      {lang === "en" ? (
+        <>
+          <p className="text-sm mb-2">
+            If you do not yet have a Leone account (symposium.leone.it,
+            3dleone.it),{" "}
+            <Link className="blue hover:underline" href={`/${lang}/register`}>
+              register now&nbsp;
+            </Link>
+            to have access to our services.
+          </p>
+          <p className="text-sm">
+            <Link className="blue hover:underline" href={`/${lang}/reset`}>
+              Did you forget your password?
+            </Link>
+          </p>
+          <p className="error-message">
+            {errorMessage && <ErrorMessage message={errorMessage} />}
+          </p>
+        </>
+      ) : (
+         <>
+          <p className="text-sm mb-2">
+            Se ancora non hai un account Leone (symposium.leone.it,
+            3dleone.it),{" "}
+            <Link className="blue hover:underline" href={`/${lang}/register`}>
+              registrati adesso&nbsp;
+            </Link>
+            per avere accesso ai nostri servizi.
+          </p>
+          <p className="text-sm">
+            <Link className="blue hover:underline" href={`/${lang}/reset`}>
+              Haidimenticato la password?
+            </Link>
+          </p>
+          <p className="error-message">
+            {errorMessage && <ErrorMessage message={errorMessage} />}
+          </p>
+        </>
+      )}
       </div>
     </div>
   );
-};
+}
 
 export default LoginForm;

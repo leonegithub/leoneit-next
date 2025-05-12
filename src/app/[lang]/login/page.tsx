@@ -14,11 +14,9 @@ const Login = () => {
   const [hasUserId, setHasUserId] = useState<string | null>();
   const router = useRouter();
   const params = useParams();
-  const lang =
-    typeof params.lang === "string"
+  const lang: "it" | "en" =
+    typeof params.lang === "string" && (params.lang === "it" || params.lang === "en")
       ? params.lang
-      : Array.isArray(params.lang)
-      ? params.lang[0]
       : "it";
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const Login = () => {
     }
   }, [router, lang]);
 
-  return !hasUserId ? <LoginForm /> : null;
+  return !hasUserId ? <LoginForm lang={lang} /> : null;
 };
 
 export default Login;

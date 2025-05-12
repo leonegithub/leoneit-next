@@ -3,10 +3,13 @@
 
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { getDictionary } from "../dictionaries";
 import parse from "html-react-parser";
 
-const RegisterForm = () => {
+async function RegisterForm({params}: {params: Promise<{lang: 'it' | 'en' }>}) {
   const [isLoading, setIsLoading] = useState(false);
+  const {lang} = await params;
+  const dict = await getDictionary(lang);
 
   const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -75,7 +78,7 @@ const RegisterForm = () => {
     <div className="container">
       <div className="p-4 ">
         <h3 className="pb-5 text-2xl font-semibold ">
-          Create your Leone account
+          {dict.register.title}
         </h3>
         <form id="registrationForm" onSubmit={handleRegister}>
           {/* Grid wrapper: one column on mobile, two columns on desktop */}
@@ -87,7 +90,7 @@ const RegisterForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="IN_Nome"
                 name="IN_Nome"
-                placeholder="Name"
+                placeholder={dict.register.name}
                 required
               />
               <span
@@ -102,7 +105,7 @@ const RegisterForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="IN_Cognome"
                 name="IN_Cognome"
-                placeholder="Surname"
+                placeholder={dict.register.cognome}
                 required
               />
               <span
@@ -187,7 +190,7 @@ const RegisterForm = () => {
                 name="IN_Paese"
                 required
               >
-                <option value="">Select Country</option>
+                <option selected disabled>{dict.register.paese}</option>
                 <option value="USA">U.S.A.</option>
                 <option value="PR">Puerto Rico</option>
                 <option value="CA">Canada</option>
@@ -204,7 +207,7 @@ const RegisterForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="IN_Indirizzo"
                 name="IN_Indirizzo"
-                placeholder="Address"
+                placeholder={dict.register.indirizzo}
                 required
               />
               <span
@@ -219,7 +222,7 @@ const RegisterForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="IN_CAP"
                 name="IN_CAP"
-                placeholder="ZIP Code"
+                placeholder={dict.register.cap}
                 required
               />
               <span
@@ -234,7 +237,7 @@ const RegisterForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="IN_Citta"
                 name="IN_Citta"
-                placeholder="City"
+                placeholder={dict.register.citta}
                 required
               />
               <span
@@ -250,10 +253,10 @@ const RegisterForm = () => {
                 id="IN_Tipo"
                 required
               >
-                <option value="">Profession</option>
-                <option value="9">DENTAL CLINIC</option>
-                <option value="8">DENTIST</option>
-                <option value="12">LABORATORY</option>
+                <option selected disabled>{dict.register.professione.title}</option>
+                <option value="9">{dict.register.professione.clinica}</option>
+                <option value="8">{dict.register.professione.dentista}</option>
+                <option value="12">{dict.register.professione.laboratorio}</option>
               </select>
               <span
                 className="text-red-500 text-sm hidden"
@@ -337,13 +340,23 @@ const RegisterForm = () => {
             </div>
           </div> */}
           <div className="flex mt-6">
-            <button
-              id="create"
-              type="submit"
-              className="bg-blue text-white px-6 py-2 rounded hover:bg-blue-700 focus:outline-none"
-            >
-              {isLoading ? "Loading..." : "Register"}
-            </button>
+            {lang === "en" ? (
+              <button
+                id="create"
+                type="submit"
+                className="bg-blue text-white px-6 py-2 rounded hover:bg-blue-700 focus:outline-none"
+              >
+                {isLoading ? "Loading..." : "Register"}
+              </button>
+            ) : (
+              <button
+                id="create"
+                type="submit"
+                className="bg-blue text-white px-6 py-2 rounded hover:bg-blue-700 focus:outline-none"
+              >
+                {isLoading ? "Caricamento..." : "Registrati"}
+              </button>
+            )}
           </div>
         </form>
       </div>
