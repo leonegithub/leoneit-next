@@ -1,7 +1,7 @@
 //// filepath: /src/context/AuthContext.tsx
 "use client";
 
-import { getCookie } from "@/app/[lang]/login/page";
+import { getCookie } from "@/utils/cookies";
 import {
   createContext,
   useContext,
