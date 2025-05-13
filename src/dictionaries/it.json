@@ -80,6 +80,8 @@
   },
 
   "qualita": {
+    "filter_results": "Filtra i risultati",
+    "no_elements_found": "Nessun risultato trovato",
     "istruzioni": {
       "title": "Qualità",
       "subtitle": "Indicazioni generali",
@@ -117,6 +119,8 @@
       "text": "Il Regolamento Europeo (UE) 2017/745 sui Dispositivi Medici (MDR), entrato in vigore il 26 maggio 2021, impone obblighi di conformità non solo ai fabbricanti ma anche a tutti gli altri operatori economici della filiera, come i 'distributori' (nell’accezione di quanto specificatamente definito nel regolamento stesso), in merito alla verifica, alla tracciabilità nonché alla sorveglianza post-vendita (ad esempio la notifica al fabbricante in merito ad eventuali non conformità, reclami o presunti incidenti). Per ulteriori informazioni, vi invitiamo a consultare il seguente sito: https://ec.europa.eu/docsroom/documents/33862 dove è possibile trovare una scheda informativa emanata dalla Commissione Europea, disponibile nella lingua di ogni paese membro. Nell’ambito dei dispositivi dentali forniti da Leone Spa sono presenti anche prodotti che si qualificano come dispositivi medici per utilizzo dentale, e in quanto rivenditore dei suddetti prodotti, la vostra organizzazione assumerà la qualifica di 'distributore', ai sensi del regolamento sopracitato. Tra gli obblighi del distributore (Art. 14 del MDR) c’è quello relativo alla rintracciabilità dei dispositivi medici (Art. 25 del MDR), che deve essere documentata e resa disponibile per i controlli delle autorità competenti, fino a 15 anni per i dispositivi medici impiantabili, 10 anni per gli altri dispositivi medici dentali. Leone S.p.a. pone da sempre la massima attenzione al rispetto delle normative vigenti. Cogliamo quindi l’occasione per ricordarvi l’importanza del rispetto dei nuovi dettami legislativi per garantire la continuità delle nostre relazioni commerciali."
     }
   },
+
+  
 
   "chi_siamo": {
     "description_1": {

@@ -73,6 +73,8 @@
   },
 
   "qualita": {
+    "filter_results": "Filter results",
+    "no_elements_found": "No elements found",
     "istruzioni": {
       "title": "Quality",
       "subtitle": "General Guidelines",
@@ -109,6 +111,8 @@
       "text": "The European Regulation (EU) 2017/745 on Medical Devices (MDR), came into force on May 26, 2021, imposes compliance obligations not only on manufacturers but also on all other economic operators in the supply chain, such as 'distributors' (in the sense of what is specifically defined in the regulation itself), with regard to verification, traceability and post-marketing surveillance (e.g. notification to the manufacturer of any non-compliance, complaints or suspected incidents). For further information, please visit the following web site: https://ec.europa.eu/docsroom/documents/33862 where you can find a factsheet issued by the European Commission, available in every language for any Member State. Among the range of dental devices supplied by Leone Spa, there are also products that qualify as medical devices for dental use, and, as a retailer of the aforementioned products, your organization will assume the qualification of 'distributor', in accordance with the aforementioned regulation. Among responsibilities of distributor (Art. 14 of the MDR), there is the traceability of medical devices (Art. 25 of the MDR), which must be documented and made available for the control of the competent authorities, up to 15 years for implantable medical devices and 10 years for other dental medical devices. Leone S.p.a. has always paid the utmost attention to compliance with current regulations. We therefore take this opportunity to remind you of the importance of respecting the new legislative regulations in order to ensure the continuity of our mutual commercial relations."
     }
   },
+
+  
 
   "chi_siamo": {
     "description_1": {
