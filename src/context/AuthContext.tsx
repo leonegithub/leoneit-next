@@ -32,7 +32,6 @@ const AuthContext = createContext<AuthContextType>({
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [userId, setUserId] = useState<string | null>(null);
   const [userData, setUserData] = useState<User | null>(null);
-  const [, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const cookieUserId = getCookie("idUser");
@@ -41,7 +40,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } else {
       setUserId(localStorage.getItem("userId"));
     }
-    setIsLoading(false);
+
   }, []);
 
   return (
