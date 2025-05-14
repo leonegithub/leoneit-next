@@ -64,7 +64,9 @@ export default function RegisterFormClient({
         toast.error(parse(data.ReturnedError.join("<br/> ")) as string);
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      toast.error(
+        error instanceof Error ? error.message : lang === "en" ? "An error occurred. Please try again." : "Si è verificato un errore. Riprova."
+      );
     } finally {
       setIsLoading(false);
     }

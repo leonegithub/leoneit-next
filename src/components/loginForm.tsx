@@ -8,10 +8,16 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 
+interface LoginDictionary {
+  login: {
+    title: string;
+  }
+}
+
 function LoginForm({ lang }: { lang: "it" | "en" }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [dict, setDict] = useState<any>(null);
+  const [dict, setDict] = useState<LoginDictionary | null>(null);
   const router = useRouter();
   const { setUserId } = useAuth();
 
