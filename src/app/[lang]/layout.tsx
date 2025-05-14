@@ -16,13 +16,18 @@ export async function generateStaticParams() {
   return [{ lang: "it" }, { lang: "en" }];
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: "it" | "en" }>;
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: Promise<{ lang: "it" | "en" }>;
+  }>
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   // Risolvi params per poterli passare ai componenti server
   const resolvedParams = await params;
 

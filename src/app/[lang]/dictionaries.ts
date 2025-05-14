@@ -5,5 +5,11 @@ const dictionaries = {
     import("../../dictionaries/en.json").then((module) => module.default),
 };
 
-export const getDictionary = async (locale: "it" | "en") =>
-  dictionaries[locale]();
+export const getDictionary = async (locale: "it" | "en") => {
+  const loader = dictionaries[locale];
+  if (!loader) {
+    throw new Error(`Locale non supportato: ${locale}`)
+  }
+  return loader();
+}
+

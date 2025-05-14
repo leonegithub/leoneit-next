@@ -12,7 +12,8 @@ interface SafetySheet {
   prodotti: string[];
 }
 
-export default async function QualitySheets({ params }: { params: { lang: 'it' | 'en' } }) {
+export default async function QualitySheets(props: { params: Promise<{ lang: 'it' | 'en' }> }) {
+  const params = await props.params;
   const { lang } = params;
   const dict = await getDictionary(lang);
 
