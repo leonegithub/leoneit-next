@@ -22,6 +22,10 @@
   color: var(--bianco);
 }
 
+.red {
+  color: var(--colore-secondario);
+}
+
 .bg-blue {
   background-color: var(--colore-primario);
 }
