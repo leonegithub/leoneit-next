@@ -4,11 +4,29 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import parse from "html-react-parser";
 
+interface RegisterDictionary {
+  register: {
+    title: string;
+    name: string;
+    cognome: string;
+    paese: string;
+    indirizzo: string;
+    cap: string;
+    citta: string;
+    professione: {
+      title: string;
+      clinica: string;
+      dentista: string;
+      laboratorio: string;
+    }
+  }
+}
+
 export default function RegisterFormClient({
   dict,
   lang,
 }: {
-  dict: any;
+  dict: RegisterDictionary;
   lang: "it" | "en";
 }) {
   const [isLoading, setIsLoading] = useState(false);
