@@ -34,7 +34,7 @@ async function Qualita({params}: {params: Promise<{ lang: 'it' | 'en' }>}) {
             <Image src={leoneStabilimento90} alt="leone-stabilimento"></Image>
             </div>
             <div className="container jumbo">
-                <h1 className="blue font-bold py-4">{(await dict).qualita.sistema_di_qualita.title}</h1>
+                <h1 className="blue font-bold pt-4 pb-3">{(await dict).qualita.sistema_di_qualita.title}</h1>
                 <h2 className="blue pb-3">{(await dict).qualita.sistema_di_qualita.subtitle}</h2>
                 <p>{(await dict).qualita.sistema_di_qualita.text}</p>
                 <ul className="list-disc py-3 list-inside underline">
