@@ -100,10 +100,9 @@
       "link6_url": "https://leone.it/servizi/download/Implantology-cleaning-disinfection-sterilization.pdf"
     },
     "info-prodotti": {
-      "title": "Quality",
-      "text": "Along with CE Marking, it is the manufacturer's fundamental obligation to provide information for every device placed on the market. The information required to identify the product, ensure its safe use, identify the manufacturer, and trace the product is listed on the label and, when necessary, in the instructions for use. The label and instructions for use are provided by Leone in multiple languages. It is essential that all the information the manufacturer has associated with the product, including that which appears on the device itself and/or on the unit packaging, or possibly on the commercial packaging, is maintained throughout the distribution chain and reaches the final users intact.",
-      "button": "Read informations",
-      "symbology": "Product label symbols"
+      "title": "Product label symbols",
+      "text": "The label on the package of any medical device set on the market will show the symbols in compliance with the harmonized standards. The symbols marked with a single (*) are based on the ISO 21531, ISO 15223-1 and on the 93/42EEC Directive. The symbols marked with double (**) have been instead adapted by Leone.",
+      "under_image": "*Unless otherwise indicated, the LOT number explains the date of manufacture with the key YYMMDDNN (YY year, MM month, DD day, NN Leone progressive internal number of the lot). For example: 18021902 indicates the lot no. 2 of February 19, 2018."
     },
     "info-distributori": {
       "title": "Quality",
