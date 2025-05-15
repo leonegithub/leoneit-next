@@ -5,8 +5,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import Button from "@/components/button";
 
+interface WorldwideDictionary {
+  distributors: {
+    ortodonzia: {
+      selection: string;
+      tipology: string;
+      section: string;
+      filters: string;
+      "find-something": string;
+      distributors: string;
+      "results-found": string;
+      "not-found": string;
+    };
+  };
+}
+
 interface WorldwideClientProps {
-  dict: any;
+  dict: WorldwideDictionary;
   lang: string;
 }
 
@@ -20,7 +35,7 @@ interface ReturnedObjectProps {
   website: string
 }
 
-export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
+export default function WorldwideClient({ dict }: WorldwideClientProps) {
   const [data, setData] = useState<ReturnedObjectProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [continent, setContinent] = useState("europa");
@@ -52,7 +67,7 @@ export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
   // Funzione di traduzione locale
   const t = (key: string) => {
     // Esempio: t("ortodonzia.selection") => dict.ortodonzia.selection
-    return key.split(".").reduce((o, i) => (o ? o[i] : ""), dict);
+    return key.split(".").reduce((o, i) => (o ? (o as any)[i] : ""), dict);
   };
 
   return (
@@ -95,7 +110,7 @@ export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
 
         {/* Contenuto principale */}
         <div className="col-md-10 offset-md-2 p-3">
-          <h1 className="ads">{t("ortodonzia.distributors")}</h1>
+          <h1 className="ads">{dict.distributors.ortodonzia.distributors}</h1>
 
           {isLoading ? (
             <div className="text-center">
@@ -116,7 +131,7 @@ export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
                   </div>
                 ))
               ) : (
-                <h3>{t("ortodonzia.not-found")}</h3>
+                <h3>{dict.distributors.ortodonzia["not-found"]}</h3>
               )}
             </div>
           )}

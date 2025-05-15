@@ -73,7 +73,7 @@
       "find-something": "Cerca qualcosa in pagina",
       "distributors": "Distributori",
       "results-found": "Risultati trovati",
-      "not-found": "Nessun risultato trovato"
+      "not_found": "Nessun risultato trovato"
     }
   },
 

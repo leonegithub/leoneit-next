@@ -74,7 +74,7 @@
       "find_something": "Look for something",
       "distributors": "Distributors",
       "results-found": "Results found",
-      "not-found": "No results found"
+      "not_found": "No results found"
     }
   },
 
