@@ -48,8 +48,8 @@
   },
 
   "servizi": {
-    "assistenza-clienti": {
-      "big-title": "Come possiamo aiutarti?",
+    "assistenza_clienti": {
+      "big_title": "Come possiamo aiutarti?",
       "title1": "Competenza e disponibilità",
       "text1": "Il reparto assistenza, composto da tecnici ed ingegneri in costante aggiornamento professionale, è sempre a disposizione per fornire informazioni sui prodotti e risolvere eventuali problematiche. Un team di professionisti dislocati in tutta Italia, in coordinamento con la Leone e i partner commerciali dell’azienda, offre la propria esperienza professionale in campo implantologico, affidabilità e assistenza ai colleghi medici.",
       "title2": "Tempestività",
@@ -57,12 +57,10 @@
       "send": "invia"
     },
     "downloads": {
-      "selection": "Effettua una selezione",
-      "tipology": "Tipologia",
-      "filters": "Resetta i filtri",
-      "find-something": "Cerca qualcosa in pagina",
-      "results-found": "Risultati trovati",
-      "not-found": "Nessun risultato trovato"
+    "no_records_found": "Nessun record trovato",
+    "loading": "Caricamento...",
+    "catalogues": "Cataloghi",
+    "depliants": "Depliant"
     }
   },
 

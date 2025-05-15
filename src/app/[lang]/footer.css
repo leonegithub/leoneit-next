@@ -10,9 +10,10 @@ footer {
     font-size: calc(var(--unita-base) * 1.7);
   }
 
-  .social-media-wrapper {
-    font-size: 30px;
-  }
+}
+
+.socials-list {
+  font-size: 30px!important;
 }
 
 footer a {

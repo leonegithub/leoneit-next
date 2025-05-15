@@ -20,7 +20,7 @@ export default async function Footer({
                 <h4 className="mb-3 fw-bold">{dict.footer.services}</h4>
                 <ul className="m-0 list-unstyled">
                   <li className="mb-1">
-                    <Link href={`/${lang}/servizi/download`}>
+                    <Link href={`/${lang}/servizi/downloads`}>
                       {dict.footer.downloads}
                     </Link>
                   </li>
@@ -126,8 +126,8 @@ export default async function Footer({
               </div>
             </div>
             <div className="col-12 col-sm-6">
-              <div className="social-media-wrapper text-4xl">
-                <ul className="m-0 list-unstyled d-flex justify-content-sm-end gap-3 gap-xl-4">
+              <div className="social-media-wrapper">
+                <ul className="m-0 socials-list list-unstyled d-flex justify-content-sm-end gap-3 gap-xl-4">
                   <li>
                     <Link
                       className="pe-3 link-opacity-75-hover "

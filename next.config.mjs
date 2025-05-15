@@ -2,7 +2,16 @@ const nextConfig = {
   async redirects() {
     return [{ source: "/", destination: "/it", permanent: true }];
   },
-  // altre opzioni qui...
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "php.leone.it",
+        pathname: "/img/**"
+      }
+    ]
+  }
+
 };
 
 export default nextConfig;

@@ -49,13 +49,19 @@
   },
 
   "servizi": {
-    "assistenza-clienti": {
-      "big-title": "How can we help you?",
+    "assistenza_clienti": {
+      "big_title": "How can we help you?",
       "title1": "Expertise and Availability",
       "text1": "The assistance department, composed of technicians and engineers constantly undergoing professional updates, is always available to provide product information and resolve any issues. A team of professionals located throughout Italy, in coordination with Leone and the company’s commercial partners, offers its professional experience in the field of implantology, reliability, and support to fellow doctors.",
       "title2": "Timeliness",
       "text2": "Careful management and a cutting-edge logistics system allow us to fulfill orders with maximum precision and deliver goods to the carrier on average within 1 business day.",
       "send": "send"
+    },
+    "downloads": {
+    "no_records_found": "Nessun record trovato",
+    "loading": "Caricamento...",
+    "catalogues": "Cataloghi",
+    "depliants": "Depliant"
     }
   },
 
@@ -65,7 +71,7 @@
       "tipology": "Tipology",
       "section": "Section",
       "filters": "Reset filters",
-      "find-something": "Look for something",
+      "find_something": "Look for something",
       "distributors": "Distributors",
       "results-found": "Results found",
       "not-found": "No results found"

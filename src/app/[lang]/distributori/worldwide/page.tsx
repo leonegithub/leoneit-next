@@ -3,7 +3,7 @@ import { getDictionary } from "../../dictionaries";
 import WorldwideClient from "./WorldwideClient";
 
 export default async function WorldwidePage({ params }: { params: { lang: "it" | "en" } }) {
-  const { lang } = params;
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   if (lang === "it") {

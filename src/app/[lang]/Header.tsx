@@ -86,7 +86,7 @@ export default function Header({
             </div>
           </Link>
         ) : (
-          <Link href={`/${lang}/login`}>
+          <Link className="no-underline" href={`/${lang}/login`}>
             <div className="hidden xl:flex blue items-center">
               {lang === "it" ? "Area Riservata": "Register / Login"}
             </div>
