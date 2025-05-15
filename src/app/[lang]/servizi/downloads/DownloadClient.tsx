@@ -4,17 +4,34 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+ interface DownloadsDictionary {
+  servizi: {
+    downloads: {
+      no_records_found: string;
+      loading: string;
+      catalogues: string;
+      depliants: string;
+    };
+  };
+}
 
-function DownloadsClient({lang, dict}: {lang: string, dict: any}) {
+// Interfaccia per i dati delle riviste
+interface Journal {
+  id: string;
+  url: string;
+  thumb: string;
+  nome: string;
+  posizione: number;
+  id_tipologia: string;
+}
 
-  interface Journal {
-    id: string;
-    url: string;
-    thumb: string;
-    nome: string;
-    posizione: number;
-    id_tipologia: string;
-  }
+interface DownloadsClientProps {
+  lang: string;
+  dict: DownloadsDictionary;
+}
+
+
+function DownloadsClient({lang, dict}: DownloadsClientProps) {
 
   const [result, setResult] = useState<Journal[]>([]);
   const [isLoading, setLoading] = useState(true);

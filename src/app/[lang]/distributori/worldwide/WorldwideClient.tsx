@@ -10,8 +10,18 @@ interface WorldwideClientProps {
   lang: string;
 }
 
+interface ReturnedObjectProps {
+  id: number
+  continente: string;
+  paese: string;
+  nome: string;
+  indirizzo: string;
+  email: string;
+  website: string
+}
+
 export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<ReturnedObjectProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [continent, setContinent] = useState("europa");
 
@@ -98,7 +108,7 @@ export default function WorldwideClient({ dict, lang }: WorldwideClientProps) {
             <div className="row">
               {data.length > 0 ? (
                 data.map((item) => (
-                  <div className="col-12 col-lg-4 g-3" key={item.id}>
+                  <div className="col-12 col-lg-4 g-3" key={item.id.toString()}>
                     <h4 id="orto-nome">{item.nome}</h4>
                     <h5>{item.indirizzo}</h5>
                     <h6>{item.email}</h6>
