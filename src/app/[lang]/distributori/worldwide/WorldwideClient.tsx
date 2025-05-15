@@ -12,10 +12,10 @@ interface WorldwideDictionary {
       tipology: string;
       section: string;
       filters: string;
-      "find-something": string;
+      find_something: string;
       distributors: string;
-      "results-found": string;
-      "not-found": string;
+      results_found: string;
+      not_found: string
     };
   };
 }
@@ -131,7 +131,7 @@ export default function WorldwideClient({ dict }: WorldwideClientProps) {
                   </div>
                 ))
               ) : (
-                <h3>{dict.distributors.ortodonzia["not-found"]}</h3>
+                <h3>{dict.distributors.ortodonzia.not_found}</h3>
               )}
             </div>
           )}

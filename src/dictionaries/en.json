@@ -73,7 +73,7 @@
       "filters": "Reset filters",
       "find_something": "Look for something",
       "distributors": "Distributors",
-      "results-found": "Results found",
+      "results_found": "Results found",
       "not_found": "No results found"
     }
   },

@@ -70,9 +70,9 @@
       "tipology": "Tipologia",
       "section": "Sezione",
       "filters": "Resetta i filtri",
-      "find-something": "Cerca qualcosa in pagina",
+      "find_something": "Cerca qualcosa in pagina",
       "distributors": "Distributori",
-      "results-found": "Risultati trovati",
+      "results_found": "Risultati trovati",
       "not_found": "Nessun risultato trovato"
     }
   },
