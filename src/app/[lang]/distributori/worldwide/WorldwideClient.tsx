@@ -64,11 +64,7 @@ export default function WorldwideClient({ dict }: WorldwideClientProps) {
       .catch(() => setIsLoading(false));
   }, [continent]);
 
-  // Funzione di traduzione locale
-  const t = (key: string) => {
-    // Esempio: t("ortodonzia.selection") => dict.ortodonzia.selection
-    return key.split(".").reduce((o, i) => (o ? (o as any)[i] : ""), dict);
-  };
+ 
 
   return (
     <div className="container-fluid jumbo">
