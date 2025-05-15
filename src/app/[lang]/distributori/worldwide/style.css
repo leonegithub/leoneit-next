@@ -1,0 +1,7 @@
+#distributori-elenco {
+  margin-bottom: calc(var(--unita-base) * 12);
+}
+
+#orto-nome {
+  background-color: var(--grigio);
+}
