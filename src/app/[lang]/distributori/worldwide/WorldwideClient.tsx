@@ -58,7 +58,11 @@ export default function WorldwideClient({ dict }: WorldwideClientProps) {
     )
       .then((res) => res.json())
       .then((data) => {
-        data.ExitCode === 0 ? setData(data.ReturnedObject) : setData([]);
+        if (data.ExitCode === 0) {
+          setData(data.ReturnedObject);
+        } else {
+          setData([]);
+        }
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
