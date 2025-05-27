@@ -2,3 +2,6 @@
   margin-bottom: calc(var(--unita-base) * 15);
 }
 
+.sistema-di-qualita ul {
+  font-size: 18px;
+}
