@@ -65,10 +65,17 @@
     },
     "newslist": {
         "title": "Subscribe to the Newsletter",
-        "name": "Name",
-        "surname": "Surname",
-        "email": "Email",
-        "telephone": "Telephone number",
+         "personal_data": "Personal data",
+      "receive": "I would like to receive",
+    "name": "Name",
+    "surname": "Surname",
+    "address": "Address",
+    "zip_code": "Zip code",
+    "city": "City",
+    "state": "State",
+    "phone": "Phone",
+    "email": "Email",
+    "occupation": "Occupation",
         "personal_data_processing": "Personal data processing",
         "personal_data_text": "Pursuant to Article 13 of EU Regulation 2016/679, we inform you that your data is processed in compliance with the data protection regulations for contractual and administrative purposes. Such data is processed with the observance of all precautionary measures on security and confidentiality.",
         "read_full_information": "Read the full information",
@@ -76,7 +83,14 @@
         "i_do_not_consent": "I do not consent",
         "subscribe_label": "Subscribe to the Leone Newslist",
         "subscribe_text": "In compliance with EU Regulation 2016/679, we ask for your consent to process your personal data in order to keep you informed about all our cultural, educational (events, courses, Orthodontic Bulletin, XCN news, etc.) and commercial (catalogs, offers) initiatives promoted by us.",
-        "send": "Send"
+        "send": "Send",
+         "products": {
+      "orthodontic_catalogue": "Orthodontic Catalogue",
+      "general_implantology_catalogue": "General catalogue for Implantology",
+      "step_system_info": "Information about Step System",
+      "full_documentation": "Full documentation",
+      "leaf_atlas": "Leaf Expander clinical atlas Book Dr. Roberto Ferro"
+    }
       }
 
   },

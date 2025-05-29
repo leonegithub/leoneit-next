@@ -64,10 +64,17 @@
     },
      "newslist": {
       "title": "Iscriviti alla Newsletter",
+      "personal_data": "Dati personali",
+      "receive": "Desidero ricevere",
       "name": "Nome",
       "surname": "Cognome",
+      "address": "Indirizzo",
+      "zip_code": "Cap",
+      "city": "Città",
+      "state": "Provincia",
+      "phone": "Numero di telefono",
       "email": "Email",
-      "telephone": "Numero di telefono",
+      "occupation": "Professione",
       "personal_data_processing": "Trattamento dei dati personali",
       "personal_data_text": "Ai sensi dell'art. 13 del Regolamento UE 2016/679, ti informiamo che i tuoi dati sono trattati in conformità alla normativa sulla protezione dei dati per finalità contrattuali e amministrative. Tali dati sono trattati con tutte le misure precauzionali di sicurezza e riservatezza.",
       "read_full_information": "Leggi l'informativa completa",
@@ -75,7 +82,19 @@
       "i_do_not_consent": "Non do il consenso",
       "subscribe_label": "Iscriviti alla Newslist Leone",
       "subscribe_text": "In ottemperanza al Regolamento UE 2016/679, ti chiediamo il consenso al trattamento dei tuoi dati personali per tenerti informato su tutte le nostre iniziative culturali, formative (eventi, corsi, Bollettino di Ortodonzia, novità XCN, ecc.) e commerciali (cataloghi, offerte) promosse da noi.",
-      "send": "Invia"
+    "send": "Invia",
+      "products": {
+      "catalogo_ortodonzia": "Catalogo Ortodonzia",
+      "bollettino": "Bollettino di Informazioni Leone",
+      "xcn_news": "XCN News",
+      "catalogo_implantologia": "Catalogo generale Implantologia",
+      "doc_implantologia": "Documentazione completa Implantologia",
+      "doc_ortodonzia": "Documentazione completa Ortodonzia",
+      "doc_allineatori": "Documentazione allineatori ortodontici",
+      "doc_completa": "Documentazione completa",
+      "atlante_leaf": "Atlante clinico Leaf Expander Dr. Roberto Ferro",
+      "flussi_digitali": "Flussi digitali protesici per impianti a cono Morse - Dr. Salvatore Belcastro, Dr. Alessio Natali"
+    }
     }
   },
 
