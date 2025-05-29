@@ -47,7 +47,7 @@ export default function NewslistClient({ lang, dict }: NewslistClientProps) {
       const formData = new FormData(event.currentTarget);
 
       formData.append("lingua", lang.toUpperCase());
-      formData.append("paese", "US");
+      formData.append("paese", "null");
       formData.append("progetto", "leone");
 
       const response = await fetch("https://php.leone.it/api/SendLead.php", {
@@ -78,6 +78,56 @@ export default function NewslistClient({ lang, dict }: NewslistClientProps) {
     <div className="container  justify-center">
       <h1 className="blue font-bold py-5">{dict.servizi.newslist.title}</h1>
       <form onSubmit={onSubmit}>
+        <div className="mb-4">
+        <h3 className="block mb-3 blue font-bold text-gray-900 dark:text-white">
+            Desidero ricevere:
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+            <input type="checkbox" id="catalogo_ortodonzia" name="catalogo_ortodonzia" className="mr-2" />
+            <label htmlFor="catalogo_ortodonzia">Catalogo Ortodonzia</label>
+            </div>
+            <div>
+            <input type="checkbox" id="bollettino" name="bollettino" className="mr-2" />
+            <label htmlFor="bollettino">Bollettino di Informazioni Leone</label>
+            </div>
+            <div>
+            <input type="checkbox" id="xcn_news" name="xcn_news" className="mr-2" />
+            <label htmlFor="xcn_news">XCN News</label>
+            </div>
+            <div>
+            <input type="checkbox" id="catalogo_implantologia" name="catalogo_implantologia" className="mr-2" />
+            <label htmlFor="catalogo_implantologia">Catalogo generale Implantologia</label>
+            </div>
+            <div>
+            <input type="checkbox" id="doc_implantologia" name="doc_implantologia" className="mr-2" />
+            <label htmlFor="doc_implantologia">Documentazione completa Implantologia</label>
+            </div>
+            <div>
+            <input type="checkbox" id="doc_ortodonzia" name="doc_ortodonzia" className="mr-2" />
+            <label htmlFor="doc_ortodonzia">Documentazione completa Ortodonzia</label>
+            </div>
+            <div>
+            <input type="checkbox" id="doc_allineatori" name="doc_allineatori" className="mr-2" />
+            <label htmlFor="doc_allineatori">Documentazione allineatori ortodontici</label>
+            </div>
+            <div>
+            <input type="checkbox" id="doc_completa" name="doc_completa" className="mr-2" />
+            <label htmlFor="doc_completa">Documentazione completa</label>
+            </div>
+            <div>
+            <input type="checkbox" id="atlante_leaf" name="atlante_leaf" className="mr-2" />
+            <label htmlFor="atlante_leaf">Atlante clinico Leaf Expander Dr. Roberto Ferro</label>
+            </div>
+            <div>
+            <input type="checkbox" id="flussi_digitali" name="flussi_digitali" className="mr-2" />
+            <label htmlFor="flussi_digitali">Flussi digitali protesici per impianti a cono Morse - Dr. Salvatore Belcastro, Dr. Alessio Natali</label>
+            </div>
+        </div>
+        </div>
+            <h3 className="block py-4 blue font-bold text-gray-900 dark:text-white">
+            Dati personali:
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label
