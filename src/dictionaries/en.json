@@ -49,14 +49,20 @@
   },
 
   "servizi": {
-    "assistenza_clienti": {
-      "big_title": "How can we help you?",
-      "title1": "Expertise and Availability",
-      "text1": "The assistance department, composed of technicians and engineers constantly undergoing professional updates, is always available to provide product information and resolve any issues. A team of professionals located throughout Italy, in coordination with Leone and the company’s commercial partners, offers its professional experience in the field of implantology, reliability, and support to fellow doctors.",
-      "title2": "Timeliness",
-      "text2": "Careful management and a cutting-edge logistics system allow us to fulfill orders with maximum precision and deliver goods to the carrier on average within 1 business day.",
-      "send": "send"
-    },
+     "assistenza_clienti": {
+    "expertise_title": "Expertise and Availability",
+    "expertise_text": "The assistance department, composed of technicians and engineers constantly undergoing professional updates, is always available to provide product information and resolve any issues. A team of professionals located throughout Italy, in coordination with Leone and the company’s commercial partners, offers its professional experience in the field of implantology, reliability, and support to fellow doctors.",
+    "timeliness_title": "Timeliness",
+    "timeliness_text": "Careful management and a cutting-edge logistics system allow us to fulfill orders with maximum precision and deliver goods to the carrier on average within 1 business day.",
+    "form": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email address",
+      "phone": "Phone number",
+      "upload_file": "Upload a file",
+      "send": "Send"
+    }
+  },
     "downloads": {
     "no_records_found": "Nessun record trovato",
     "loading": "Caricamento...",

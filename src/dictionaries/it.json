@@ -48,14 +48,20 @@
   },
 
   "servizi": {
-    "assistenza_clienti": {
-      "big_title": "Come possiamo aiutarti?",
-      "title1": "Competenza e disponibilità",
-      "text1": "Il reparto assistenza, composto da tecnici ed ingegneri in costante aggiornamento professionale, è sempre a disposizione per fornire informazioni sui prodotti e risolvere eventuali problematiche. Un team di professionisti dislocati in tutta Italia, in coordinamento con la Leone e i partner commerciali dell’azienda, offre la propria esperienza professionale in campo implantologico, affidabilità e assistenza ai colleghi medici.",
-      "title2": "Tempestività",
-      "text2": "L’attenta gestione e un sistema logistico all’avanguardia permettono di evadere gli ordini con la massima precisione e consegnare la merce al vettore in media entro 1 giorno lavorativo.",
-      "send": "invia"
-    },
+     "assistenza_clienti": {
+    "expertise_title": "Competenza e disponibilità",
+    "expertise_text": "Il reparto assistenza, composto da tecnici e ingegneri costantemente aggiornati professionalmente, è sempre disponibile per fornire informazioni sui prodotti e risolvere qualsiasi problematica. Un team di professionisti dislocati su tutto il territorio nazionale, in coordinamento con Leone e i partner commerciali dell’azienda, offre la propria esperienza professionale nel campo dell’implantologia, affidabilità e supporto ai colleghi medici.",
+    "timeliness_title": "Tempestività",
+    "timeliness_text": "Una gestione attenta e un sistema logistico all’avanguardia ci permettono di evadere gli ordini con la massima precisione e di consegnare la merce al corriere mediamente entro 1 giorno lavorativo.",
+    "form": {
+      "name": "Nome",
+      "surname": "Cognome",
+      "email": "Indirizzo email",
+      "phone": "Numero di telefono",
+      "upload_file": "Carica un file",
+      "send": "Invia"
+    }
+  },
     "downloads": {
     "no_records_found": "Nessun record trovato",
     "loading": "Caricamento...",

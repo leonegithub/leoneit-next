@@ -1,0 +1,32 @@
+.colored {
+  background-color: var(--grigio);
+  padding-top: calc(var(--unita-base));
+}
+
+.assistenza-clienti {
+  .section {
+    padding: var(--unita-base) 0;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .form-floating {
+    margin: calc(var(--unita-base) / 2) 0;
+  }
+}
+
+ol {
+  margin-bottom: 0;
+}
+
+h1 {
+  text-align: center;
+  background-color: var(--grigio);
+  padding: calc(var(--unita-base) * 5) 0;
+}
+
+.info {
+  padding: calc(var(--unita-base) * 2) 0;
+}
