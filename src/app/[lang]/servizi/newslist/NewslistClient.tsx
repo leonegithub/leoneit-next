@@ -41,7 +41,7 @@ interface ResponseData {
   ReturnedObject: string;
 }
 
-export default function NewslistClient({ lang, dict }: NewslistClientProps) {
+function NewslistClient({ lang, dict }: NewslistClientProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<ResponseData | null>(null);
@@ -324,3 +324,5 @@ export default function NewslistClient({ lang, dict }: NewslistClientProps) {
     </div>
   );
 }
+
+export default NewslistClient;
