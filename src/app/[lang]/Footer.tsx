@@ -25,7 +25,9 @@ export default async function Footer({
                     </Link>
                   </li>
                   <li className="mb-1">
-                    <a href="#!">{dict.footer.newslist}</a>
+                    <Link href={`/${lang}/servizi/newslist`}>
+                    {dict.footer.newslist}
+                    </Link>
                   </li>
                   <li className="mb-1">
                     <Link href={`/${lang}/servizi/assistenza-clienti`}>
@@ -33,7 +35,9 @@ export default async function Footer({
                     </Link>
                   </li>
                   <li className="mb-1">
-                    <a href="#!">{dict.footer.restricted_area}</a>
+                    <Link href={`/${lang}/login`}>
+                    {dict.footer.restricted_area}
+                    </Link>
                   </li>
                   <li className="mb-1">
                     <Link href={`/${lang}/azienda/whistleblowing`}>
