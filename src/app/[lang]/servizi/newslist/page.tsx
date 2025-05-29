@@ -1,5 +1,3 @@
-"use server"
-
 import { getDictionary } from "../../dictionaries";
 import NewslistClient from "./NewslistClient";
 
