@@ -61,6 +61,21 @@
     "loading": "Caricamento...",
     "catalogues": "Cataloghi",
     "depliants": "Depliant"
+    },
+     "newslist": {
+      "title": "Iscriviti alla Newsletter",
+      "name": "Nome",
+      "surname": "Cognome",
+      "email": "Email",
+      "telephone": "Numero di telefono",
+      "personal_data_processing": "Trattamento dei dati personali",
+      "personal_data_text": "Ai sensi dell'art. 13 del Regolamento UE 2016/679, ti informiamo che i tuoi dati sono trattati in conformità alla normativa sulla protezione dei dati per finalità contrattuali e amministrative. Tali dati sono trattati con tutte le misure precauzionali di sicurezza e riservatezza.",
+      "read_full_information": "Leggi l'informativa completa",
+      "i_consent": "Do il consenso",
+      "i_do_not_consent": "Non do il consenso",
+      "subscribe_label": "Iscriviti alla Newslist Leone",
+      "subscribe_text": "In ottemperanza al Regolamento UE 2016/679, ti chiediamo il consenso al trattamento dei tuoi dati personali per tenerti informato su tutte le nostre iniziative culturali, formative (eventi, corsi, Bollettino di Ortodonzia, novità XCN, ecc.) e commerciali (cataloghi, offerte) promosse da noi.",
+      "send": "Invia"
     }
   },
 
