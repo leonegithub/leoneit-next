@@ -54,10 +54,14 @@ export default async function Footer({
                 </h4>
                 <ul className="m-0 list-unstyled">
                   <li className="mb-1">
-                    <a href="#!">{dict.footer.orthodontics}</a>
+                    <Link href={`/${lang}/pubblicazioni/ortodonzia`}>
+                    {dict.footer.orthodontics}
+                    </Link>
                   </li>
                   <li className="mb-1">
-                    <a href="#!">{dict.footer.implantology}</a>
+                    <Link href={`/${lang}/pubblicazioni/implantologia`}>
+                    {dict.footer.implantology}
+                    </Link>
                   </li>
                 </ul>
               </div>
