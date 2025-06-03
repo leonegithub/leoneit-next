@@ -26,7 +26,7 @@ interface ContattiDictionary {
     }
 }
 
-function ContattiClient({ lang, dict }: {  lang: string, dict: ContattiDictionary }) {
+function ContattiClient({ dict }: {  lang: string, dict: ContattiDictionary }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
