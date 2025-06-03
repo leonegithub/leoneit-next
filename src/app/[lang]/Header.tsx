@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logoLeone from "../../../public/logoLeone.png";
 import { useAuth } from "@/context/AuthContext";
+import LanguageDropdown from "@/components/LanguageDropdown";
 import "./header.css";
 
 interface Option {
@@ -79,6 +80,10 @@ export default function Header({
             </li>
           </ul>
         </nav>
+        <div className="flex items-center">
+
+          <LanguageDropdown lang={lang}/>
+
         {userId ? (
           <Link href={`/${lang}/personal-area`}>
             <div className="hidden blue xl:flex flex items-center">
@@ -92,6 +97,7 @@ export default function Header({
             </div>
           </Link>
         )}
+        </div>
         <button className="hamburger" onClick={handleShow} aria-label="Menu">
           <i className="fa-solid fa-bars"></i>
         </button>
