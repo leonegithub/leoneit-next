@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AuthProvider } from "@/context/AuthContext";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import Script from "next/script";
 /* import Chatbot from "../components/Chatbot"; */
 
 export const metadata: Metadata = {
@@ -65,7 +66,10 @@ export default async function RootLayout(
           <main>{children}</main>
           <Footer params={resolvedParams} />
         </AuthProvider>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <Script
+         src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
+          strategy="afterInteractive"
+          />
       </body>
     </html>
   );

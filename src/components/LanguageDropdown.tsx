@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import ItalianFlag from '@/../public/italia.png';
 import UsaFlag from '@/../public/united-states.png';
 import { usePathname, useRouter } from "next/navigation";
