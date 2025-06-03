@@ -1,0 +1,45 @@
+.publication-list {
+  list-style: none;
+  padding: 0;
+}
+
+.publication-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: var(--colore-primario);
+}
+
+.authors {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.publication-info {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--colore-primario);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

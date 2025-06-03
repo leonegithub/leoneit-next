@@ -104,6 +104,19 @@
     }
   },
 
+  "pubblicazioni": {
+    "ortodonzia": {
+      "title": "Pubblicazioni Ortodonzia",
+      "goto": "Vai alla pubblicazione",
+      "notFound": "Nessun risultato trovato"
+    },
+    "implantologia": {
+      "title": "Pubblicazioni Implantologia",
+      "goto": "Vai alla pubblicazione",
+      "notFound": "Nessun risultato trovato"
+    }
+  },
+
   "distributors": {
     "ortodonzia": {
       "selection": "Effettua una selezione",

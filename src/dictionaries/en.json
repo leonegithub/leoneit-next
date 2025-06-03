@@ -98,8 +98,20 @@
       "leaf_atlas": "Leaf Expander clinical atlas Book Dr. Roberto Ferro"
     }
       }
-
-  },
+      
+    },
+    "pubblicazioni": {
+   "ortodonzia": {
+     "title": "Orthodontics publications and literature",
+     "goto": "Go to publication",
+     "notFound": "No results found"
+   },
+   "implantologia": {
+     "title": "Implantology publications and literature",
+     "goto": "Go to publication",
+     "notFound": "No results found"
+   }
+ },
 
   "distributors": {
     "ortodonzia": {
