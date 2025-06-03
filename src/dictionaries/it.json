@@ -47,6 +47,15 @@
     "welcome_message": "Benvenuto nella pagina principale"
   },
 
+  "contatti": {
+    "title": "Contattaci",
+    "nome": "Nome",
+    "cognome": "Cognome",
+    "email": "Email",
+    "messaggio": "Scrivi un messaggio...",
+    "bottone": "Invia"
+  },
+
   "servizi": {
      "assistenza_clienti": {
     "expertise_title": "Competenza e disponibilità",

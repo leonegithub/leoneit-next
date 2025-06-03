@@ -48,6 +48,15 @@
     "welcome_message": "Welcome to the homepage"
   },
 
+    "contatti": {
+    "title": "Contact us",
+    "nome": "Name",
+    "cognome": "Surname",
+    "email": "Email",
+    "messaggio": "Send us a message...",
+    "bottone": "Send"
+  },
+
   "servizi": {
      "assistenza_clienti": {
     "expertise_title": "Expertise and Availability",
