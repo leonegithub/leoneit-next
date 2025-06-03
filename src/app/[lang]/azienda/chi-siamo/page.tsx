@@ -1,6 +1,7 @@
 import { getDictionary } from "../../dictionaries";
 import Image from "next/image";
 import fotoSito from "./Foto Sito 20246.png";
+import ChiSiamoClient from "./ChiSiamoClient";
 import "./style.css";
 
 const ChiSiamo = async ({
@@ -44,6 +45,8 @@ const ChiSiamo = async ({
             text={description.text}
           />
         ))}
+        {/* Passa le immagini come prop */}
+        <ChiSiamoClient />
       </div>
     </div>
   );
