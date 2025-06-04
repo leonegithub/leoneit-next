@@ -1,0 +1,47 @@
+{
+    "header": {
+    "company": {
+      "label": "Company",
+      "about_us": "About Us",
+      "90_years": "90 Years Leone",
+      "careers": "Careers",
+      "whistleblowing": "Whistleblowing",
+      "contacts": "Contacts"
+    },
+    "orthodontics": {
+      "label": "Orthodontics",
+      "products": "Products",
+      "digital_orthodontics": "Digital Orthodontics",
+      "news": "News",
+      "offers": "Offers",
+      "essenza": "Essence Philosophy",
+      "senza_russare": "Snore-Free",
+      "videos": "Videos and Procedures",
+      "bulletin": "Bulletin",
+      "publications": "Orthodontics Publications"
+    },
+    "implantology": {
+      "label": "Implantology",
+      "system": "Implant System",
+      "products": "Products",
+      "news": "News",
+      "offers": "Offers",
+      "software": "Software Libraries",
+      "procedures": "Procedures",
+      "xcn": "XCN® News",
+      "team": "XCN® Team",
+      "videos": "Videos",
+      "publications": "Implantology Publications"
+    },
+    "courses_events": {
+      "label": "Courses and Events",
+      "iso": "ISO",
+      "orthodontics_courses": "Orthodontics courses",
+      "implantology_courses": "Implantology courses",
+      "live_days": "Live Days",
+      "events": "Events",
+      "speakers": "Speakers",
+      "educational_videos": "Educational Videos"
+    }
+  }
+}

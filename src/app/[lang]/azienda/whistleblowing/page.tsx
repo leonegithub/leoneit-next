@@ -1,4 +1,15 @@
-export default function Whistleblowing() {
+"use client"
+
+import  { useRouter } from "next/navigation";
+
+export default async function Whistleblowing({ params }: { params: Promise<{ lang: "it" | "en"}>}) {
+  const router = useRouter();
+  const { lang } = await params;
+
+  if (lang !== "it") {
+    return router.push("/")
+  } 
+
   return (
     <div className="container jumbo">
       <h1 className="blue font-bold pt-4">Whistleblowing</h1>

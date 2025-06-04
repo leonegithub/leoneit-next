@@ -27,10 +27,14 @@ export const getOptions1 = async ({
           },
         ]
       : []),
-    {
-      label: dict.header.company.whistleblowing,
-      href: getLocalizedHref(lang, "/azienda/whistleblowing"),
-    },
+       ...(lang === "it"
+      ? [
+          {
+            label: dict.header.company.whistleblowing,
+            href: getLocalizedHref(lang, "/azienda/whistleblowing"),
+          },
+        ]
+      : []),
     {
       label: dict.header.company.contacts,
       href: getLocalizedHref(lang, "/azienda/contatti"),
