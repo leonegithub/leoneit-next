@@ -1,5 +1,6 @@
 import LavoraConNoiClient from "./LavoraConNoiClient";
 
-export default function LavoraConNoiPage({ params }: { params: { lang: "it" | "en" } }) {
-  return <LavoraConNoiClient lang={params.lang} />;
+export default async function LavoraConNoiPage({ params }: { params: Promise<{ lang: "it" | "en" }> }) {
+  const { lang } = await params;
+  return <LavoraConNoiClient lang={lang} />;
 }
