@@ -85,6 +85,8 @@
       "name": "Nombre",
       "surname": "Apellido",
       "address": "Dirección",
+      "language": "Idioma",
+      "country": "Naciòn",
       "zip_code": "Código postal",
       "city": "Ciudad",
       "state": "Estado",

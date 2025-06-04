@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import LoadingButton from "@/components/LoadingButton";
+import SelectPaesi from "@/components/SelectPaesi";
 
 interface NewslistDictionary {
   servizi: {
@@ -13,8 +14,9 @@ interface NewslistDictionary {
       surname: string;
       address: string;
       zip_code: string;
+      language: string
       city: string;
-      state: string;
+      country: string;
       phone: string;
       email: string;
       occupation: string;
@@ -55,7 +57,6 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
       const formData = new FormData(event.currentTarget);
 
       formData.append("lingua", lang.toUpperCase());
-      formData.append("paese", "null");
       formData.append("progetto", "leone");
 
       const response = await fetch("https://php.leone.it/api/SendLead.php", {
@@ -67,10 +68,14 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
         },
       });
 
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`)
+      }
+
       if (!response.ok) {
         throw new Error("Errore nell'inviare i dati");
       }
-
+      console.log(data);
       const responseData = await response.json();
       setData(responseData);
     } catch (error) {
@@ -103,114 +108,78 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
             {dict.servizi.newslist.personal_data}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="mb-3">
-  <label htmlFor="name" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.name}
+     <div className="mb-3">
+      <label htmlFor="nome" className="block mb-2 font-medium text-gray-900 dark:text-white">
+        {dict.servizi.newslist.name}
+      </label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
+  <div className="mb-3">
+      <label htmlFor="cognome" className="block mb-2 font-medium text-gray-900 dark:text-white">
+        {dict.servizi.newslist.surname}
+      </label>
+      <input
+        type="text"
+        id="cognome"
+        name="cognome"
+        required
+        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
+<div className="mb-3">
+      <label htmlFor="email" className="block mb-2 font-medium text-gray-900 dark:text-white">
+        {dict.servizi.newslist.email}
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
+ <div className="mb-3">
+      <label htmlFor="telefono" className="block mb-2 font-medium text-gray-900 dark:text-white">
+        {dict.servizi.newslist.phone}
+      </label>
+      <input
+        type="number"
+        id="telefono"
+        name="telefono"
+        required
+        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
+<div className="mb-3">
+  <label htmlFor="lingua" className="block mb-2 font-medium text-gray-900 dark:text-white">
+    {dict.servizi.newslist.language || "Lingua"}
   </label>
-  <input
-    type="text"
-    id="name"
-    name="name"
+  <select
+    id="lingua"
+    name="lingua"
     required
+    defaultValue={lang.toUpperCase()}
     className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
+  >
+    <option value="IT">Italiano</option>
+    <option value="EN">English</option>
+    <option value="ES">Español</option>
+  </select>
 </div>
 <div className="mb-3">
-  <label htmlFor="surname" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.surname}
+  <label htmlFor="paese" className="block mb-2 font-medium text-gray-900 dark:text-white">
+    {dict.servizi.newslist.country}
   </label>
-  <input
-    type="text"
-    id="surname"
-    name="surname"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
+  <SelectPaesi value={lang.toUpperCase()}/>
 </div>
-<div className="mb-3">
-  <label htmlFor="address" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.address}
-  </label>
-  <input
-    type="text"
-    id="address"
-    name="address"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="zip_code" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.zip_code}
-  </label>
-  <input
-    type="text"
-    id="zip_code"
-    name="zip_code"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="city" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.city}
-  </label>
-  <input
-    type="text"
-    id="city"
-    name="city"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="state" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.state}
-  </label>
-  <input
-    type="text"
-    id="state"
-    name="state"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="phone" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.phone}
-  </label>
-  <input
-    type="text"
-    id="phone"
-    name="phone"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="email" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.email}
-  </label>
-  <input
-    type="email"
-    id="email"
-    name="email"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
-<div className="mb-3">
-  <label htmlFor="occupation" className="block mb-2 font-medium text-gray-900 dark:text-white">
-    {dict.servizi.newslist.occupation}
-  </label>
-  <input
-    type="text"
-    id="occupation"
-    name="occupation"
-    required
-    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-  />
-</div>
+
+
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>

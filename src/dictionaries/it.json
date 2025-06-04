@@ -84,6 +84,8 @@
       "name": "Nome",
       "surname": "Cognome",
       "address": "Indirizzo",
+      "language": "Lingua",
+      "country": "Paese",
       "zip_code": "Cap",
       "city": "Città",
       "state": "Provincia",
