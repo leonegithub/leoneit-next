@@ -1,104 +1,113 @@
 import "./style.css";
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Row from "react-bootstrap/Row";
-import leonedsl65 from "./Leone90_DSL-65.jpg";
 import Image from "next/image";
+import leonedsl65 from "./Leone90_DSL-65.jpg";
 import { getDictionary } from "../../dictionaries";
+import { Label, TextInput, Select, FileInput, Button } from "flowbite-react";
 
 async function AssistenzaClienti({ params }: { params: Promise<{ lang: "it" | "en" }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
+  const offices = [
+    "Vendite Italia",
+    "Vendite Estero",
+    "ISO Istituto Studi Odontoiatrici",
+    "Ufficio Tecnico",
+    "Servizi Marketing",
+  ];
+
   return (
     <>
       <div className="assistenza-clienti">
         <div className="img-container">
-          <Image src={leonedsl65} alt="leone-dsl"></Image>
+          <Image src={leonedsl65} alt="leone-dsl" />
         </div>
         <div className="container jumbo">
           <div className="info">
             <div className="section">
               <h2 className="blue font-bold pb-2">{dict.servizi.assistenza_clienti.expertise_title}</h2>
-              <p>
-              {dict.servizi.assistenza_clienti.expertise_text}
-              </p>
+              <p>{dict.servizi.assistenza_clienti.expertise_text}</p>
             </div>
             <div className="section">
               <h2 className="blue font-bold pb-2">{dict.servizi.assistenza_clienti.timeliness_title}</h2>
-              <p>
-                {dict.servizi.assistenza_clienti.timeliness_text}
-              </p>
+              <p>{dict.servizi.assistenza_clienti.timeliness_text}</p>
             </div>
           </div>
-          <Form>
-            <Row className="g-2">
-              <Col md>
-                <FloatingLabel label="Nome">
-                  <Form.Control
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    placeholder={dict.servizi.assistenza_clienti.form.name}
-                    required
-                  />
-                </FloatingLabel>
-              </Col>
-              <Col md>
-                <FloatingLabel label="Cognome">
-                  <Form.Control
-                    type="text"
-                    id="cognome"
-                    name="cognome"
-                    placeholder={dict.servizi.assistenza_clienti.form.surname}
-                    required
-                  />
-                </FloatingLabel>
-              </Col>
-            </Row>
-            <Row className="g-2">
-              <Col md>
-                <FloatingLabel label="Indirizzo email">
-                  <Form.Control
-                    name="email"
-                    id="email"
-                    type="email"
-                    placeholder={dict.servizi.assistenza_clienti.form.email}
-                    required
-                  />
-                </FloatingLabel>
-              </Col>
-              <Col md>
-                <FloatingLabel label="Numero di telefono">
-                  <Form.Control
-                    name="telefono"
-                    id="telefono"
-                    type="number"
-                    placeholder={dict.servizi.assistenza_clienti.form.phone}
-                    required
-                  />
-                </FloatingLabel>
-              </Col>
-            </Row>
-            <div className="mb-3">
-              <label htmlFor="formFile" className="form-label">
-                {dict.servizi.assistenza_clienti.form.upload_file}
-              </label>
-              <input
-                className="form-control"
-                type="file"
-                id="formFile"
-                accept="jpg, jpeg, csx, xls"
-              />
+          <form className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="nome" value="Nome" />
+                <TextInput
+                  id="nome"
+                  name="nome"
+                  placeholder={dict.servizi.assistenza_clienti.form.name}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="cognome" value="Cognome" />
+                <TextInput
+                  id="cognome"
+                  name="cognome"
+                  placeholder={dict.servizi.assistenza_clienti.form.surname}
+                  required
+                />
+              </div>
             </div>
-            <button
-              type="button"
-              className="text-white bg-blue px-4 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg p-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="email" value="Email" />
+                <TextInput
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={dict.servizi.assistenza_clienti.form.email}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="telefono" value="Telefono" />
+                <TextInput
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder={dict.servizi.assistenza_clienti.form.phone}
+                  required
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="ufficio" value="Ufficio" />
+                <Select
+                  id="ufficio"
+                  name="ufficio"
+                  defaultValue="Generale"
+                  required
+                >
+                  <option value="Generale">Generale</option>
+                  {offices.map((office, idx) => (
+                    <option key={idx} value={office}>{office}</option>
+                  ))}
+                </Select>
+              </div>
+              <div>
+                <Label htmlFor="formFile" value={dict.servizi.assistenza_clienti.form.upload_file} />
+                <FileInput
+                  id="formFile"
+                  name="file"
+                  accept=".jpg,.jpeg,.csx,.xls"
+                />
+              </div>
+            </div>
+            <Button
+              type="submit"
+              color="blue"
+              className="px-4"
             >
               {dict.servizi.assistenza_clienti.form.send}
-            </button>
-          </Form>
+            </Button>
+          </form>
         </div>
       </div>
     </>
