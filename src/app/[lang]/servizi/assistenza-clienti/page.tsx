@@ -5,6 +5,7 @@ import { getDictionary } from "../../dictionaries";
 import { Label, TextInput, Select, FileInput, Button } from "flowbite-react";
 
 async function AssistenzaClienti({ params }: { params: Promise<{ lang: "it" | "en" }> }) {
+  
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
