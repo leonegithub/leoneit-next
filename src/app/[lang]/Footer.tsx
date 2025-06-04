@@ -5,7 +5,7 @@ import "./footer.css";
 export default async function Footer({
   params,
 }: {
-  params: { lang: "it" | "en" };
+  params: { lang: "it" | "en" | "es"};
 }) {
   const { lang } = params;
   const dict = await getDictionary(lang);

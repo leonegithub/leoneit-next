@@ -9,8 +9,8 @@ const Login = () => {
   const [hasUserId, setHasUserId] = useState<string | null>();
   const router = useRouter();
   const params = useParams();
-  const lang: "it" | "en" =
-    typeof params.lang === "string" && (params.lang === "it" || params.lang === "en")
+  const lang: "it" | "en" | "es"=
+    typeof params.lang === "string" && (params.lang === "it" || params.lang === "en" || params.lang === "es")
       ? params.lang
       : "it";
 

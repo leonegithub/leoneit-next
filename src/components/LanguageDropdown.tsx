@@ -2,11 +2,13 @@ import { useState } from "react";
 import Image from "next/image";
 import ItalianFlag from '@/../public/italia.png';
 import UsaFlag from '@/../public/united-states.png';
+import EspanaFlag from '@/../public/espana.png'
 import { usePathname, useRouter } from "next/navigation";
 
 const languages = [
   { code: "it", flag: ItalianFlag, alt: "italian-flag" },
-  { code: "en", flag: UsaFlag, alt: "american-flag" }
+  { code: "en", flag: UsaFlag, alt: "american-flag" },
+  { code: "es", flag: EspanaFlag, alt: "espana-flag"}
 ];
 
 function LanguageDropdown({ lang }: { lang: string }) {

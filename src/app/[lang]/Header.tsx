@@ -16,7 +16,7 @@ interface Option {
   href: string;
 }
 interface HeaderClientProps {
-  lang: "it" | "en";
+  lang: "it" | "en" | "es";
   options1: Option[];
   options2: Option[];
   options3: Option[];
@@ -91,11 +91,17 @@ export default function Header({
             </div>
           </Link>
         ) : (
-          <Link className="no-underline" href={`/${lang}/login`}>
-            <div className="hidden xl:flex blue items-center">
-              {lang === "it" ? "Area Riservata": "Register / Login"}
-            </div>
-          </Link>
+
+<Link className="no-underline" href={`/${lang}/login`}>
+  <div className="hidden xl:flex blue items-center">
+    {lang === "it"
+      ? "Area Riservata"
+      : lang === "es"
+      ? "Área reservada"
+      : "Register / Login"}
+  </div>
+</Link>
+
         )}
         </div>
         <button className="hamburger" onClick={handleShow} aria-label="Menu">

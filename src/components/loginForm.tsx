@@ -14,7 +14,7 @@ interface LoginDictionary {
   }
 }
 
-function LoginForm({ lang }: { lang: "it" | "en" }) {
+function LoginForm({ lang }: { lang: "it" | "en" | "es"}) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [dict, setDict] = useState<LoginDictionary | null>(null);
@@ -124,45 +124,66 @@ function LoginForm({ lang }: { lang: "it" | "en" }) {
             )}
           </div>
         </form>
-      {lang === "en" ? (
-        <>
-          <p className="text-sm mb-2">
-            If you do not yet have a Leone account (symposium.leone.it,
-            3dleone.it),{" "}
-            <Link className="blue hover:underline" href={`/${lang}/register`}>
-              register now&nbsp;
-            </Link>
-            to have access to our services.
-          </p>
-          <p className="text-sm">
-            <Link className="blue hover:underline" href={`/${lang}/reset`}>
-              Did you forget your password?
-            </Link>
-          </p>
-          <p className="error-message">
-            {errorMessage && <ErrorMessage message={errorMessage} />}
-          </p>
-        </>
-      ) : (
-         <>
-          <p className="text-sm mb-2">
-            Se ancora non hai un account Leone (symposium.leone.it,
-            3dleone.it),{" "}
-            <Link className="blue hover:underline" href={`/${lang}/register`}>
-              registrati adesso&nbsp;
-            </Link>
-            per avere accesso ai nostri servizi.
-          </p>
-          <p className="text-sm">
-            <Link className="blue hover:underline" href={`/${lang}/reset`}>
-              Haidimenticato la password?
-            </Link>
-          </p>
-          <p className="error-message">
-            {errorMessage && <ErrorMessage message={errorMessage} />}
-          </p>
-        </>
-      )}
+
+{lang === "en" ? (
+  <>
+    <p className="text-sm mb-2">
+      If you do not yet have a Leone account (symposium.leone.it,
+      3dleone.it),{" "}
+      <Link className="blue hover:underline" href={`/${lang}/register`}>
+        register now&nbsp;
+      </Link>
+      to have access to our services.
+    </p>
+    <p className="text-sm">
+      <Link className="blue hover:underline" href={`/${lang}/reset`}>
+        Did you forget your password?
+      </Link>
+    </p>
+    <p className="error-message">
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+    </p>
+  </>
+) : lang === "es" ? (
+  <>
+    <p className="text-sm mb-2">
+      Si aún no tienes una cuenta Leone (symposium.leone.it,
+      3dleone.it),{" "}
+      <Link className="blue hover:underline" href={`/${lang}/register`}>
+        regístrate ahora&nbsp;
+      </Link>
+      para acceder a nuestros servicios.
+    </p>
+    <p className="text-sm">
+      <Link className="blue hover:underline" href={`/${lang}/reset`}>
+        ¿Olvidaste tu contraseña?
+      </Link>
+    </p>
+    <p className="error-message">
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+    </p>
+  </>
+) : (
+  <>
+    <p className="text-sm mb-2">
+      Se ancora non hai un account Leone (symposium.leone.it,
+      3dleone.it),{" "}
+      <Link className="blue hover:underline" href={`/${lang}/register`}>
+        registrati adesso&nbsp;
+      </Link>
+      per avere accesso ai nostri servizi.
+    </p>
+    <p className="text-sm">
+      <Link className="blue hover:underline" href={`/${lang}/reset`}>
+        Hai dimenticato la password?
+      </Link>
+    </p>
+    <p className="error-message">
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+    </p>
+  </>
+)}
+
       </div>
     </div>
   );
