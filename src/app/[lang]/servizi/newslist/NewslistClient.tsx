@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import LoadingButton from "@/components/LoadingButton";
 import SelectPaesi from "@/components/SelectPaesi";
+import parse from 'html-react-parser'
 
 interface NewslistDictionary {
   servizi: {
@@ -41,6 +42,7 @@ interface NewslistClientProps {
 interface ResponseData {
   ExitCode: number;
   ReturnedObject: string;
+  ReturnedError: string[];
 }
 
 function NewslistClient({ lang, dict }: NewslistClientProps) {
@@ -56,7 +58,6 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
     try {
       const formData = new FormData(event.currentTarget);
 
-      formData.append("lingua", lang.toUpperCase());
       formData.append("progetto", "leone");
 
       const response = await fetch("https://php.leone.it/api/SendLead.php", {
@@ -176,7 +177,7 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
   <label htmlFor="paese" className="block mb-2 font-medium text-gray-900 dark:text-white">
     {dict.servizi.newslist.country}
   </label>
-  <SelectPaesi value={lang.toUpperCase()}/>
+  <SelectPaesi defaultValue="IT" name="paese" required/>
 </div>
 
 
@@ -280,14 +281,15 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
           </button>
         )}
       </form>
+      
       {data && data.ExitCode === 0 && (
         <div id="response-message" style={{ color: "green" }}>
           {data.ReturnedObject}
         </div>
       )}
-      {error && (
+      {data && data.ExitCode === 1 && (
         <div id="response-message" style={{ color: "red" }}>
-          {error}
+          {parse(data.ReturnedError.join("<br> "))}
         </div>
       )}
     </div>
