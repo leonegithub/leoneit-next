@@ -47,13 +47,11 @@ interface ResponseData {
 
 function NewslistClient({ lang, dict }: NewslistClientProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<ResponseData | null>(null);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsLoading(true);
-    setError(null);
 
     try {
       const formData = new FormData(event.currentTarget);
@@ -81,7 +79,7 @@ function NewslistClient({ lang, dict }: NewslistClientProps) {
       setData(responseData);
     } catch (error) {
       if (error instanceof Error) {
-        setError(error.message);
+        console.error(error.message);
       }
     } finally {
       setIsLoading(false);
