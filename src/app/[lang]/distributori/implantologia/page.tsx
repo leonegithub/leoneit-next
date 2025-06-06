@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import Implantologia from "./ImplantologiaClient";
 
-export default async function OrtodonziaPage({ params }: { params: { lang: "it" | "en" } }) {
-  const { lang } = params;
+export default async function OrtodonziaPage({ params }: { params: Promise<{ lang: "it" | "en" }> }) {
+  const { lang } = await params;
 
   if (lang !== "it") {
     redirect(`/${lang}/distributori/worldwide`);
