@@ -3,7 +3,7 @@
 import { useState } from "react";
 import '../style.css'
 
-function Ortodonzia() {
+function Implantologia() {
 
     const [selectedRegion, setSelectedRegion] = useState<null | string>(null)
 
@@ -664,7 +664,7 @@ return (
     <div className="container">
       <h1 className="blue font-bold py-3">Rete di distribuzione Italia Implantologia</h1>
       <p>Tutti i Depositi Dentali italiani sono in grado di fornire entro 48 ore l’intera gamma dei nostri prodotti di Ortodonzia e Materiali Rigenerativi.
-        Per i prodotti di Implantologia consultare la mappa dei distributori.
+        Per i prodotti di Implantologia consultare la mappa dei distributori. <br />
         Il reparto Vendite Leone è sempre a disposizione per soddisfare qualsiasi vostra ulteriore domanda, assistenza e urgenza.
         </p>
       <div className="rete-vendita-implantologia py-4 flex">
@@ -743,4 +743,4 @@ return (
   );
 }
 
-export default Ortodonzia;
+export default Implantologia;
