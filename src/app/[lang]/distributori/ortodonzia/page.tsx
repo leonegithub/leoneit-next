@@ -1,9 +1,11 @@
 "use server";
 
+
 import { redirect } from "next/navigation";
 
-async function Ortodonzia({ params }: { params: Promise<{ lang: "it" | "en" }>}) {
+async function Implantologia({params}: {params: Promise<{lang: "it" | "en"}>}) {
     const { lang } = await params;
+
 
   if (lang !== "it") {
     redirect(`/${lang}/distributori/worldwide`);
@@ -16,4 +18,4 @@ async function Ortodonzia({ params }: { params: Promise<{ lang: "it" | "en" }>})
   );
 }
 
-export default Ortodonzia;
+export default Implantologia;
