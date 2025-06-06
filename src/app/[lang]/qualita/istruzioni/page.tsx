@@ -13,6 +13,7 @@ async function Istruzioni({params}: {params: Promise<{lang: "it" | "en"}>}) {
 
 
   const info = lang === "it" ? (await dict).qualita.istruzioni.info : null;
+  const url = "https://leone.it/servizi/qualita";
 
   const istruzioni = [
     {
@@ -57,6 +58,26 @@ async function Istruzioni({params}: {params: Promise<{lang: "it" | "en"}>}) {
           title: "Procedura di rimozione di monconi Leone",
           url: "https://leone.it/servizi/download/ISTR074_08-15.pdf",
         },
+        {
+          title: "Mini impianti ortodontici autoforanti Leone",
+          url: url + "/ISTR063_01-24.pdf"
+        },
+        {
+          title: "BMX Mini Expander",
+          url: url + "/ISTR082_01-24.pdf"
+        },
+        {
+          title: "Espansore / Disgiuntore per TADs",
+          url: url + "/ISTR085_01-24.pdf"
+        }, 
+        {
+          title: "TADs Temporary Anchorage Device",
+          url: url + "/ISTR086_01-24.pdf"
+        },
+        {
+          title: "Strumenti chirurgici riutilizzabili per uso dentale",
+          url: url + "/ISTR092_12-23.pdf"
+        }
       ],
     },
   ];
