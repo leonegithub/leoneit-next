@@ -1,8 +1,10 @@
-"use client"
-
+import { redirect } from 'next/navigation';
 import '../style.css'
 
-function Ortodonzia() {
+async function Ortodonzia({ params }: {params: Promise<{ lang: "it" | "en" | "es" }>}) {
+  const { lang } = await params;
+
+  if (lang !== "it") redirect(`/${lang}/distributori/worldwide`)
 
 const ReteVenditeOrtodonzia = [
   {

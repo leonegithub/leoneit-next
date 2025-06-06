@@ -126,7 +126,7 @@
   "distributors": {
     "ortodonzia": {
       "selection": "Make a selection",
-      "tipology": "Tipology",
+      "tipology": "Choose geographical area",
       "section": "Section",
       "filters": "Reset filters",
       "find_something": "Look for something",

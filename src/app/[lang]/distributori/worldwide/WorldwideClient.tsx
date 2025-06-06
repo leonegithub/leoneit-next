@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
-import Button from "@/components/button";
+import "../style.css";
+
 
 interface WorldwideDictionary {
   distributors: {
@@ -37,10 +36,7 @@ interface ReturnedObjectProps {
 
 export default function WorldwideClient({ dict }: WorldwideClientProps) {
   const [data, setData] = useState<ReturnedObjectProps[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [continent, setContinent] = useState("europa");
-
-  const resetFilter = () => setContinent("europa");
+  const [continent, setContinent] = useState<string>("");
 
   const fetchOptions = {
     method: "GET",
@@ -50,93 +46,73 @@ export default function WorldwideClient({ dict }: WorldwideClientProps) {
     },
   };
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(
-      `https://php.leone.it/api/GetDistributori.php?continente=${continent}`,
-      fetchOptions
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.ExitCode === 0) {
-          setData(data.ReturnedObject);
-        } else {
-          setData([]);
-        }
-        setIsLoading(false);
-      })
-      .catch(() => setIsLoading(false));
-  }, [continent]);
+
+    useEffect(() => {
+      fetch(
+        `https://php.leone.it/api/GetDistributori.php?continente=${continent}`,
+        fetchOptions
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.ExitCode === 0) {
+            setData(data.ReturnedObject);
+          } else {
+            setData([]);
+          }
+        })
+    }, [continent]);
+
 
  
 
   return (
-    <div className="container-fluid jumbo">
-      <div className="row">
-        {/* Sidebar */}
-        <div
-          className="col-md-2 ps-5  py-3"
-          style={{ position: "fixed", top: "100px", bottom: "0", left: "0" }}
+   <div className="container">
+  <h1 className="blue font-bold pt-3">{dict.distributors.ortodonzia.distributors}</h1>
+  <div className="rete-vendita-implantologia flex">
+ 
+    <div className="regioni w-1/2">
+      <form>
+        <label htmlFor="continentSelect" className="block mb-3 font-bold blue">
+          <h3 className="pt-3 pt-3 pb-2">
+          {dict.distributors.ortodonzia.tipology}
+          </h3>
+        </label>
+        <select
+          id="continentSelect"
+          className="bg-gray-50 my-3 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+          value={continent}
+          onChange={(e) => setContinent(e.target.value)}
         >
-          <div className="border-bottom pb-3">
-            <h4>{dict.distributors.ortodonzia.selection}</h4>
-          </div>
-          <div className="mb-3">
-            <label className="form-label" htmlFor="continentSelect">
-              {dict.distributors.ortodonzia.tipology}
-            </label>
-            <select
-              id="continentSelect"
-              className="form-select"
-              value={continent}
-              onChange={(e) => setContinent(e.target.value)}
-            >
-              <option value="" disabled>
-                Seleziona una voce
-              </option>
-              <option value="europa">Europa</option>
-              <option value="asia">Asia</option>
-              <option value="oceania">Oceania</option>
-              <option value="america">America</option>
-            </select>
-          </div>
-          <div onClick={resetFilter}>
-          <Button testo={dict.distributors.ortodonzia.filters} />
-          </div>
-         {/*  <Button className="btn btn-primary" onClick={resetFilter}>
-            {dict.distributors.ortodonzia.filters}
-          </button> */}
-        </div>
-
-        {/* Contenuto principale */}
-        <div className="col-md-10 offset-md-2 p-3">
-          <h1 className="ads">{dict.distributors.ortodonzia.distributors}</h1>
-
-          {isLoading ? (
-            <div className="text-center">
-              <div
-                className="spinner-border"
-                style={{ color: "var(--colore-primario)" }}
-              ></div>
-            </div>
-          ) : (
-            <div className="row">
-              {data.length > 0 ? (
-                data.map((item) => (
-                  <div className="col-12 col-lg-4 g-3" key={item.id.toString()}>
-                    <h4 id="orto-nome">{item.nome}</h4>
-                    <h5>{item.indirizzo}</h5>
-                    <h6>{item.email}</h6>
-                    <h6>{item.website}</h6>
-                  </div>
-                ))
-              ) : (
-                <h3>{dict.distributors.ortodonzia.not_found}</h3>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+          <option value="" disabled>{dict.distributors.ortodonzia.selection}</option>
+          <option value="europa">Europe</option>
+          <option value="asia">Asia</option>
+          <option value="oceania">Oceania</option>
+          <option value="america">America</option>
+        </select>
+      </form>
+     {data.map((distributore, index) => (
+  <div className="my-3" key={index}>
+    <strong>{distributore.nome}</strong>
+    {distributore.indirizzo && <> - {distributore.indirizzo}</>}
+    <br />
+    <i className="fa-solid blue fa-phone-volume"></i>: {distributore.email}
+    {distributore.email && (
+      <>
+        <br />
+        <i className="fa-solid blue fa-envelope"></i>: <a className="underline" href={`mailto:${distributore.email}`}>{distributore.email}</a>
+      </>
+    )}
+    {distributore.website && (
+      <>
+        <br />
+        <i className="blue fa-solid fa-globe"></i>: <a className="underline" href={`https://${distributore.website}`} target="_blank" rel="noopener noreferrer">{distributore.website}</a>
+      </>
+    )}
+    <hr className="my-3" />
+  </div>
+))}
     </div>
+  </div>
+</div>
   );
 }
