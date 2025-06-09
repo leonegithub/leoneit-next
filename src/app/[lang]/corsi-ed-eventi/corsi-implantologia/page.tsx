@@ -41,7 +41,7 @@ export default function CorsiImplantologia() {
         <div className="jumbotron"></div>
         <div className="container">
           <div className="elenco-corsi row">
-            <h4>Nessun corso di ortodonzia trovato.</h4>
+            <h4>Nessun corso di implantologia trovato.</h4>
           </div>
         </div>
       </div>
