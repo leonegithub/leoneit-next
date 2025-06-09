@@ -8,6 +8,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "php.leone.it",
         pathname: "/img/**"
+      },
+      {
+        protocol: "https",
+        hostname: "fastly.picsum.photos",
+        pathname: "/**"
       }
     ]
   }
