@@ -85,7 +85,7 @@ export default function Relatori() {
           ) : data.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {data.map((relatore) => (
-                <div className="bg-white rounded-xl transition-shadow p-6 flex flex-col items-center text-center h-full">
+                <div key={relatore.id} className="bg-white rounded-xl transition-shadow p-6 flex flex-col items-center text-center h-full">
                     <Link
                       key={relatore.id}
                       href={`relatori/${relatore.id}`}
