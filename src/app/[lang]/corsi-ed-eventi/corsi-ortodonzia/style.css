@@ -20,7 +20,6 @@
 
   .corso-singolo {
     background-color: var(--bianco);
-    border: 1px solid #ddd;
     padding: 20px;
     display: flex;
     flex-direction: row;
