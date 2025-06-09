@@ -15,15 +15,15 @@
 
 .download-magazines {
   background-color: var(--grigio);
-  .download-link {
-    height: 100%;
-    img {
-      width: 100%;
-    }
-  }
+  justify-content: space-between;
 }
 
-.download-link img {
+.download-link{
+  display: flex;
+  align-items: center;
   height: 100%;
-  object-fit: cover;
-}
+  img {
+
+    object-fit: cover;
+  }
+} 
