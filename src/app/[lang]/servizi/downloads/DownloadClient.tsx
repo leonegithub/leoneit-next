@@ -23,6 +23,7 @@ interface Journal {
   nome: string;
   posizione: number;
   id_tipologia: string;
+  id_sezione: string;
 }
 
 interface DownloadsClientProps {
@@ -34,10 +35,11 @@ interface DownloadsClientProps {
 function DownloadsClient({lang, dict}: DownloadsClientProps) {
 
   const [result, setResult] = useState<Journal[]>([]);
+  const [bulletins, setBulletins] = useState<Journal[]>([]);
   const [isLoading, setLoading] = useState(true);
 
-  const url =
-    `https://php.leone.it/api/GetDownload.php?lingua=${lang.toUpperCase()}`;
+  const url = new URL(`https://php.leone.it/api/GetDownload.php?lingua=${lang.toUpperCase()}`);
+
   const fetchOptions = {
     headers: {
       Authorization:
@@ -50,7 +52,7 @@ function DownloadsClient({lang, dict}: DownloadsClientProps) {
       .then((res) => res.json())
       .then((data) => {
         setResult(data.ReturnedObject);
-        console.log("i dati sono" + data + "e la chiamata fatta è " + url);
+        setBulletins(data.ReturnedObject.filter((item: { id_tipologia: string; }) => item.id_tipologia === "bollettino"))
         setLoading(false);
       });
   }, []);
@@ -93,6 +95,24 @@ function DownloadsClient({lang, dict}: DownloadsClientProps) {
       </div>
     ));
   };
+
+  function bulletinOnly(paramToAppend: string) {
+    const filteredBulletins = bulletins.filter((bulletin) => bulletin.id_sezione === paramToAppend);
+
+     return (<div
+        className="download-magazines flex flex-col"
+      >
+        <Link href={`downloads/${paramToAppend}`}>
+          <Image
+            src={`https://php.leone.it${filteredBulletins[0].thumb}`}
+            alt={filteredBulletins[0].nome}
+            width={400}
+            height={400}
+          />
+          <h5 className="text-lg p-2">Download numeri precedenti</h5>
+        </Link>
+      </div>)
+  }
 
   const depliantSection = filteringSection("depliant");
   /* const bollettinoSection = filteringSection("bollettino"); */
@@ -138,18 +158,15 @@ function DownloadsClient({lang, dict}: DownloadsClientProps) {
               </div>
             </div> : null
             }
-            {/* <div className="section">
-              <h1 className=" blue mb-4 mt-5">Depliants</h1>
+            {lang === "it" ? (
+            <div className="section">
+              <h1 className=" blue my-4 mt-5">Bollettini</h1>
               <div className="list gap-5 my-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6">
-                {displayingSection(depliantSection)}
+                {bulletinOnly("implantologia")}
+                {bulletinOnly("ortodonzia")}
               </div>
             </div>
-            <div className="section">
-              <h1 className=" blue my-4 mt-5">Bulletins</h1>
-              <div className="list gap-5 my-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6">
-                {displayingSection(bollettinoSection)}
-              </div>
-            </div> */}
+            ) : null}
           </>
         )}
       </div>
