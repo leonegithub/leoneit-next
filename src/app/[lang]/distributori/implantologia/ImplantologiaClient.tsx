@@ -677,13 +677,13 @@ return (
               <br />
               {venditore.telefono && (
                 <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i>: {venditore.telefono}</span>
+                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.telefono}</span>
                   <br />
                 </>
               )}
               {venditore.cellulare && (
                 <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i>: {venditore.cellulare}</span>
+                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.cellulare}</span>
                   <br />
                 </>
               )}
@@ -691,7 +691,7 @@ return (
               {venditore.email && (
                 <>
                   <span>
-                    <i className="fa-solid blue fa-envelope"></i>: <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
+                    <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
                   </span>
                 </>
               )}
@@ -719,19 +719,19 @@ return (
                 <strong>{distributore.nome}</strong>
                 {distributore.indirizzo && <> - {distributore.indirizzo}</>}
                 <br />
-                <i className="fa-solid blue fa-phone-volume"></i>: {distributore.telefono}
-                {distributore.cellulare && <> <br /> <i className="fa-solid blue fa-phone"></i>: {distributore.cellulare}</>}
+                <i className="fa-solid blue fa-phone-volume"></i> {distributore.telefono}
+                {distributore.cellulare && <> <br /> <i className="fa-solid blue fa-phone"></i> {distributore.cellulare}</>}
               
                 {distributore.email && (
                     <>
                     <br />
-                    <i className="fa-solid blue fa-envelope"></i>: <a className="underline" href={`mailto:${distributore.email}`}>{distributore.email}</a>
+                    <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${distributore.email}`}>{distributore.email}</a>
                     </>
                 )}
                 {distributore.website && (
                     <>
                     <br />
-                    <i className="blue fa-solid fa-globe"></i>: <a className="underline" href={`https://${distributore.website}`} target="_blank" rel="noopener noreferrer">{distributore.website}</a>
+                    <i className="blue fa-solid fa-globe"></i> <a className="underline" href={`https://${distributore.website}`} target="_blank" rel="noopener noreferrer">{distributore.website}</a>
                     </>
                 )}
                 <hr className="my-2" />

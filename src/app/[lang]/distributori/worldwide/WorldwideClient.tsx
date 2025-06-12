@@ -95,17 +95,17 @@ export default function WorldwideClient({ dict }: WorldwideClientProps) {
     <strong>{distributore.nome}</strong>
     {distributore.indirizzo && <> - {distributore.indirizzo}</>}
     <br />
-    <i className="fa-solid blue fa-phone-volume"></i>: {distributore.email}
+    <i className="fa-solid blue fa-phone-volume"></i> {distributore.email}
     {distributore.email && (
       <>
         <br />
-        <i className="fa-solid blue fa-envelope"></i>: <a className="underline" href={`mailto:${distributore.email}`}>{distributore.email}</a>
+        <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${distributore.email}`}>{distributore.email}</a>
       </>
     )}
     {distributore.website && (
       <>
         <br />
-        <i className="blue fa-solid fa-globe"></i>: <a className="underline" href={`https://${distributore.website}`} target="_blank" rel="noopener noreferrer">{distributore.website}</a>
+        <i className="blue fa-solid fa-globe"></i> <a className="underline" href={`https://${distributore.website}`} target="_blank" rel="noopener noreferrer">{distributore.website}</a>
       </>
     )}
     <hr className="my-3" />

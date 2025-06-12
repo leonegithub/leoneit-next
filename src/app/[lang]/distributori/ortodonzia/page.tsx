@@ -97,13 +97,13 @@ Il reparto Vendite Leone è sempre a disposizione per soddisfare qualsiasi vostr
               <br />
               {venditore.telefono && (
                 <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i>: {venditore.telefono}</span>
+                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.telefono}</span>
                   <br />
                 </>
               )}
               {venditore.cellulare && (
                 <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i>: {venditore.cellulare}</span>
+                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.cellulare}</span>
                   <br />
                 </>
               )}
@@ -111,7 +111,7 @@ Il reparto Vendite Leone è sempre a disposizione per soddisfare qualsiasi vostr
               {venditore.email && (
                 <>
                   <span>
-                    <i className="fa-solid blue fa-envelope"></i>: <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
+                    <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
                   </span>
                 </>
               )}
