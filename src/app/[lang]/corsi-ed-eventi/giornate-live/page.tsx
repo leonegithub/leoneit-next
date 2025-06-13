@@ -17,15 +17,15 @@ function GiornateLive() {
             <h1 className="blue font-bold mt-5 mb-3">Giornate dimostrative di pratica implantare</h1>
             <div className="giornatelive main-text">
                             <p>
-                Le <strong>giornate di pratica implantologica</strong> offrono l'opportunità di <strong>assistere gratuitamente </strong>a interventi di chirurgia implantare, permettendo ai partecipanti di confrontarsi direttamente con specialisti del settore.                
+                Le <strong>giornate di pratica implantologica</strong> offrono l&apos;opportunità di <strong>assistere gratuitamente </strong>a interventi di chirurgia implantare, permettendo ai partecipanti di confrontarsi direttamente con specialisti del settore.                
                                 </p>
                 <p>
-                    Durante l'evento verranno approfondite le <strong>caratteristiche tecniche dell'impianto Morse Taper</strong>, evidenziando i suoi vantaggi come:
+                    Durante l&apos;evento verranno approfondite le <strong>caratteristiche tecniche dell&apos;impianto Morse Taper</strong>, evidenziando i suoi vantaggi come:
                 </p>
                 <p>
                     <ul className="list-inside">
-                        {vantaggi.map((vantaggio) => (
-                            <li className="list-disc">{vantaggio}</li>
+                        {vantaggi.map((vantaggio, index) => (
+                            <li key={index} className="list-disc">{vantaggio}</li>
                         ))}
                     </ul>
                 </p>
@@ -37,7 +37,7 @@ function GiornateLive() {
                     Il programma propedeutico include <strong>ampia visibilità degli interventi dalla sala adiacente</strong>, oltre a fornire a ogni partecipante materiale informativo dettagliato, bibliografia e manuali di procedura chirurgica e protesica.
                 </p>
                 <p>
-                    Non perdere l'opportunità di aggiornare le tue conoscenze e migliorare le tue competenze nell'implantologia con <strong>connessione Morse Taper</strong>!
+                    Non perdere l&apos;opportunità di aggiornare le tue conoscenze e migliorare le tue competenze nell&apos;implantologia con <strong>connessione Morse Taper</strong>!
                 </p>
             </div>
 
