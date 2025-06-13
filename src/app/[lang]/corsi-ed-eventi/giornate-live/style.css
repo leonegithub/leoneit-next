@@ -1,9 +1,7 @@
-.ortodonzia-corsi {
-  .jumbotron {
-    min-height: 400px;
-    background-color: var(--colore-primario);
-    margin-bottom: calc(var(--unita-base) * 5);
-  }
+.giornatelive p {
+    padding: 5px 0;
+}
+
 .corsi-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -20,7 +18,6 @@
 .corso-singolo {
   background: #fff;
   border-radius: 16px;
-
   padding: 1.5rem;
   transition: box-shadow 0.2s;
   gap: 2rem;
@@ -51,7 +48,6 @@
 }
 
 .corso-top .titolo {
-  color: var(--colore-primario);
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -71,15 +67,9 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background: var(--colore-primario);
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.2s;
-}
-
-.corso-file a:hover {
-  background: #3949ab;
-}
 }

@@ -71,6 +71,10 @@ export const getOptions4 = async ({
       label: dict.header.courses_events.speakers,
       href: getLocalizedHref(lang, "/corsi-ed-eventi/relatori"),
     },
+    {
+      label: dict.header.courses_events.live_days,
+      href: getLocalizedHref(lang, "/corsi-ed-eventi/giornate-live")
+    }
   ];
 };
 
