@@ -2,42 +2,163 @@
 
 import { Carousel } from "react-bootstrap";
 import Image from "next/image";
-import iso_logo from "./Cropped_Image.png";
-import felix from "./felix-lam-J7fxkhtOqt0-unsplash.jpg";
-import house from "./lorem-picsum-1280x720.webp";
-import aula from "./Aula.jpg";
+import Link from "next/link";
+import fortini from './fortini 02.jpg';
+import tipa from './DSCF2650.jpg'
+import sala from './sala 16mar06.jpg'
+import labo from './laboratorio.jpg'
+import isoLogo from './Cropped_Image.png'
+
 import "./style.css";
+import ChiSiamoClient from "../../azienda/chi-siamo/ChiSiamoClient";
 
 function CarouselFadeExample() {
   return (
-    <Carousel className="carosello" fade>
-      <Carousel.Item>
-        <Image src={felix} alt="felix" />
-        <Carousel.Caption>
-          {/*   <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image src={house} alt="house" />
-        <Carousel.Caption>
-          {/*  <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+   <Carousel fade data-bs-theme="dark">
+        <Carousel.Item>
+          <Link
+            href="https://leafexpander.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="relative">
+              {/* desktop */}
+              <Image src={sala} alt="mad" className="w-full hidden lg:block" />
+              {/* tablet */}
+             {/*  <Image
+                src={LeafTablet}
+                alt="software"
+                className="w-full hidden md:block lg:hidden"
+              /> */}
+              {/* mobile */}
+             {/*  <Image
+                src={LeafMobile}
+                alt="software-mobile"
+                className="w-full block md:hidden"
+              /> */}
+
+            </div>
+          </Link>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Link target="_blank" href="products/sleep-apnea">
+            <div className="relative">
+              {/* desktop */}
+              <Image src={fortini} alt="mad" className="w-full hidden lg:block" />
+              {/* tablet */}
+             {/*  <Image
+                src={MadTablet}
+                alt="software"
+                className="w-full hidden md:block lg:hidden"
+              /> */}
+              {/* mobile */}
+             {/*  <Image
+                src={MadMobile}
+                alt="software-mobile"
+                className="w-full block md:hidden"
+              /> */}
+              {/* <div className="mad-slide absolute left-10 lg:left-28 top-[25%] md:top-1/2  transform -translate-y-1/2">
+                <h3 className="mad-slide text-xl md:text-4xl lg:text-4xl">
+                  <strong>Sleep Apnea</strong>
+                </h3>
+                <h2 className="font-bold text-5xl md:text-6xl lg:text-9xl">
+                  M.A.D.
+                </h2>
+                <h3 className="text-xl md:text-5xl lg:text-6xl">
+                  Anti snoring devices
+                </h3>
+              </div> */}
+            </div>
+          </Link>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <Link
+            href="https://www.3dleone.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="relative">
+              {/* desktop */}
+              <Image
+                src={labo}
+                alt="software"
+                className="w-full hidden lg:block"
+              />
+              {/* tablet */}
+             {/*  <Image
+                src={SoftwareTablet}
+                alt="software"
+                className="w-full hidden md:block lg:hidden"
+              /> */}
+              {/* mobile */}
+              {/* <Image
+                src={SoftwareMobile}
+                alt="software-mobile"
+                className="w-full block md:hidden"
+              /> */}
+             {/*  <div className="absolute flex justify-center lg:justify-normal w-full lg:left-28 top-1/2 transform -translate-y-1/2 text-white">
+                <h2 className="font-bold xl:pb-8 text-4xl md:text-4xl lg:text-4xl">
+                  Software
+                  <br />
+                  <span className="font-bold text-4xl md:text-6xl lg:text-8xl">
+                    3DLeone Designer
+                  </span>
+                </h2>
+              </div> */}
+            </div>
+          </Link>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Link
+            href="https://www.3dleone.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="relative">
+              {/* desktop */}
+              <Image
+                src={tipa}
+                alt="software"
+                className="w-full hidden lg:block"
+              />
+              {/* tablet */}
+             {/*  <Image
+                src={SoftwareTablet}
+                alt="software"
+                className="w-full hidden md:block lg:hidden"
+              /> */}
+              {/* mobile */}
+              {/* <Image
+                src={SoftwareMobile}
+                alt="software-mobile"
+                className="w-full block md:hidden"
+              /> */}
+             {/*  <div className="absolute flex justify-center lg:justify-normal w-full lg:left-28 top-1/2 transform -translate-y-1/2 text-white">
+                <h2 className="font-bold xl:pb-8 text-4xl md:text-4xl lg:text-4xl">
+                  Software
+                  <br />
+                  <span className="font-bold text-4xl md:text-6xl lg:text-8xl">
+                    3DLeone Designer
+                  </span>
+                </h2>
+              </div> */}
+            </div>
+          </Link>
+        </Carousel.Item>
+      </Carousel>
   );
 }
 
 export default function Iso() {
   return (
     <div className="iso-info">
-      <div className="img-container">
-        <Image src={aula} alt="iso-logo" />
+      <div className="img-container carosello">
+        <CarouselFadeExample />
       </div>
       <div className="container">
         <div className="sezione-uno">
-          <h1 className="blue font-bold mt-4 mb-2">ISO - Istituto Studi Odontoiatrici</h1>
+          <h1 className="blue font-bold mb-2">ISO - Istituto Studi Odontoiatrici</h1>
           <p>
             L’Istituto Studi Odontoiatrici, divisione scientifica e centro
             formazione della società Leone, opera su tutto il territorio
@@ -55,7 +176,7 @@ export default function Iso() {
         </div>
         <div className="sezione-due">
           <h1 className="blue font-bold mt-4 mb-2">Struttura all&apos;avanguardia</h1>
-          <p className="mb-4">
+          <p className="mb-5">
             Il primo piano, oltre ad accogliere i locali riservati ai servizi di
             ricevimento e di segreteria, è completamente dedicato alle aule
             d’insegnamento: - studio dentistico attrezzato con 3 riuniti per
@@ -92,10 +213,13 @@ export default function Iso() {
             </div>
           </div>
           <div className="col-12 col-md-6 right">
-            <Image className="iso-logo" src={iso_logo} alt="pesce" />
+            <Image className="iso-logo" src={isoLogo} alt="pesce" />
+          </div>
+          <div className="gallery mt-4">
+
+          <ChiSiamoClient/>
           </div>
         </div>
-        <CarouselFadeExample />
       </div>
     </div>
   );
