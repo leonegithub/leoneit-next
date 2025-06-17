@@ -37,7 +37,7 @@ export default function Iso() {
       </div>
       <div className="container">
         <div className="sezione-uno">
-          <h2 className="ads">ISO - Istituto Studi Odontoiatrici</h2>
+          <h1 className="blue font-bold mt-4 mb-2">ISO - Istituto Studi Odontoiatrici</h1>
           <p>
             L’Istituto Studi Odontoiatrici, divisione scientifica e centro
             formazione della società Leone, opera su tutto il territorio
@@ -54,8 +54,8 @@ export default function Iso() {
           </p>
         </div>
         <div className="sezione-due">
-          <h2 className="ads">Struttura all&apos;avanguardia</h2>
-          <p>
+          <h1 className="blue font-bold mt-4 mb-2">Struttura all&apos;avanguardia</h1>
+          <p className="mb-4">
             Il primo piano, oltre ad accogliere i locali riservati ai servizi di
             ricevimento e di segreteria, è completamente dedicato alle aule
             d’insegnamento: - studio dentistico attrezzato con 3 riuniti per
@@ -79,13 +79,13 @@ export default function Iso() {
         <div className="iso-contatti row d-flex">
           <div className="col-12 col-md-6 left">
             <div>
-              <h4 className="ads">Contatti</h4>
+              <h4 className="blue font-bold">Contatti</h4>
               <ul>
                 <li>
-                  Telefono: <a href="tel:+39055304458">055.304458</a>
+                  Telefono: <a className="underline" href="tel:+39055304458">055.304458</a>
                 </li>
                 <li>
-                  Email: <a href="mailto:">iso@leone.it</a>
+                  Email: <a className="underline" href="mailto:">iso@leone.it</a>
                 </li>
                 <li>WhatsApp: 3453815578</li>
               </ul>

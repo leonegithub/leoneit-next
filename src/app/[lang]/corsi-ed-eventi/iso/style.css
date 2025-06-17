@@ -4,10 +4,6 @@
     height: 100%;
     object-fit: cover;
   }
-  .sezione-uno,
-  .sezione-due {
-    margin: calc(var(--unita-base) * 5) 0;
-  }
 
   .carosello {
     margin: calc(var(--unita-base) * 5) 0;
