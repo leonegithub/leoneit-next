@@ -6,7 +6,7 @@ interface ShopCardPAProps {
   link: string;
   text: string;
   linkText: string;
-  descText: string;
+  descText: string | React.ReactNode;
 }
 
 function ShopCardPA({
