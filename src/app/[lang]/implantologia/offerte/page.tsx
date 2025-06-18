@@ -7,7 +7,7 @@ const titleTwo = <span>Start-Up</span>
 const undertitle = <span>Valida per clinici <strong>under 39</strong></span>
 const undertitleTwo = <span style={{fontSize: 16}}>La chirurgia <strong>professionalmente assistita</strong></span>
 
-function OrtodonziaOfferte(){
+function ImplantologiaOfferte(){
     return (
         <div className="container mt-2">
             <div className="flex py-5">
@@ -32,4 +32,4 @@ function OrtodonziaOfferte(){
     );
 }
 
-export default OrtodonziaOfferte;
+export default ImplantologiaOfferte;
