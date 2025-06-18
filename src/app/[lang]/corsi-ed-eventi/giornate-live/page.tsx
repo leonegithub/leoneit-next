@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bannerChirurgia from "./Banner_Sito_Chirurgia_Live.png";
-import './style.css'
 import GiornateClient from "./GiornateClient";
+import './style.css'
 
 const vantaggi = ["stabilità assoluta",
     "annullamento di gap e micromovimenti",
@@ -11,8 +11,10 @@ const vantaggi = ["stabilità assoluta",
 
 function GiornateLive() {
     return (
+        <>
         <div className="img-container">
         <Image className="leone-logo" src={bannerChirurgia} alt="leone-grande" />
+        </div>
         <div className="container">
             <h1 className="blue font-bold mt-5 mb-3">Giornate dimostrative di pratica implantare</h1>
             <div className="giornatelive main-text">
@@ -44,7 +46,8 @@ function GiornateLive() {
             <h2 className="blue font-bold py-3">Calendario incontri</h2>
             <GiornateClient />
         </div>
-      </div>
+        
+        </>
     );
 }
 

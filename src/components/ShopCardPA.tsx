@@ -4,7 +4,7 @@ import Link from "next/link";
 interface ShopCardPAProps {
   image: StaticImageData;
   link: string;
-  text: string;
+  text: string | React.ReactNode;
   linkText: string;
   descText: string | React.ReactNode;
 }
