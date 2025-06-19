@@ -11,6 +11,7 @@ import ShopCardPA from "@/components/ShopCardPA";
 import DDDAR from "./3DAR.png";
 import LeafAR from "./LeafAR2.png";
 import SympAR from "./SympAR3.png";
+import Purchased from "@/components/purchased-components/Purchased";
 
 const PersonalArea = () => {
   const router = useRouter();
@@ -162,6 +163,10 @@ const PersonalArea = () => {
                       </div>
                     </div>
                   );
+                  case "purchased":
+                    return (
+                      <Purchased IDUser={userId} />
+                    )
                 default:
                   return null;
               }
