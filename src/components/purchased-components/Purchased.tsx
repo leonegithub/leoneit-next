@@ -56,10 +56,10 @@ function Purchased({ IDUser }: { IDUser: string | null }) {
         setError(error.message);
         setLoading(false);
     })
-}, [IDUser])
-    
-    if (loading) return <div className="py-4"><Spinner /></div>;
-    if (error) return <div>Errore: {error}</div>;
+}, [IDUser]);
+
+if (loading) return <div className="py-4"><Spinner /></div>;
+if (error) return <div>Errore: {error}</div>;
     
 return (
     <>
@@ -69,11 +69,54 @@ return (
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" className="px-6 py-3">ID</th>
-                        <th scope="col" className="px-6 py-3">Descrizione</th>
-                        <th scope="col" className="px-6 py-3">Data Acquisto</th>
-                        <th scope="col" className="px-6 py-3">Data Scadenza</th>
-                        <th scope="col" className="px-6 py-3">fingerprint</th>
-                        <th scope="col" className="px-6 py-3">Stato</th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                descrizione
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                data acquisto
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                data scadenza
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
+                       <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                pc associato
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                ticket residui
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="flex items-center">
+                                stato
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                    </svg>
+                            </span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,6 +129,7 @@ return (
                             <td className="px-6 py-4">{item.DataCreazione}</td>
                             <td className="px-6 py-4">{item.DataScadenza}</td>
                             <td className="px-6 py-4">{item.FingerPrint}</td>
+                            <td className="px-6 py-4">{item.NTicketResidui}</td>
                             <td className="px-6 py-4">
                                 <div className="flex items-center">
                                     <div className={`h-2.5 w-2.5 rounded-full ${item.StatoRinnovo === "ATTIVA" ? "bg-green-500" : "bg-red-500"} me-2`}></div>
