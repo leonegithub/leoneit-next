@@ -1,4 +1,3 @@
-//// filepath: /src/context/AuthContext.tsx
 "use client";
 
 import { getCookie } from "@/utils/cookies";
@@ -11,8 +10,24 @@ import {
 } from "react";
 
 interface User {
-  Nome: string;
-  Cognome: string;
+   Nome: string;
+    Cognome: string;
+    Tipologia: string;
+    Email: string;
+    RS: string;
+    Indirizzo: string;
+    NumeroCivico: string;
+    Città: string;
+    CAP: string;
+    Paese: string;
+    IDIva: string;
+    CodiceFiscale: string;
+    CodiceSDI: string;
+    FlgComCom: string;
+    DataInserimento: string;
+    FlgEmailConfermata: boolean;
+    FlgControllatoPiva: boolean;
+    PEC?: string;
 }
 
 interface AuthContextType {
@@ -29,6 +44,21 @@ const AuthContext = createContext<AuthContextType>({
   setUserData: () => {},
 });
 
+async function fetchUserData(userId: string) {
+  const res = await fetch(
+    `https://php.leone.it/api/ws_leone/GetUser.php?IN_USERID=${userId}`,
+    {
+      headers: {
+        Authorization:
+          "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
+      },
+    }
+  );
+  if (!res.ok) return null;
+  const data = await res.json();
+  return data.ReturnedObject || null;
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [userId, setUserId] = useState<string | null>(null);
   const [userData, setUserData] = useState<User | null>(null);
@@ -40,8 +70,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } else {
       setUserId(localStorage.getItem("userId"));
     }
-
   }, []);
+
+  useEffect(() => {
+    if (userId) {
+      fetchUserData(userId).then(setUserData);
+    } else {
+      setUserData(null);
+    }
+  }, [userId]);
 
   return (
     <AuthContext.Provider value={{ userId, setUserId, userData, setUserData }}>

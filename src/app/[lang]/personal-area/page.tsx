@@ -22,59 +22,19 @@ const PersonalArea = () => {
       : Array.isArray(params.lang)
       ? params.lang[0]
       : "it";
-  const { userId, setUserId, setUserData } = useAuth();
-  const [data, setData] = useState<User | null>(null);
+  const { userId, setUserId, userData, setUserData } = useAuth();
   const tabs = ["shop", "purchased", "orders", "downloads", "profile"];
   const searchParams = useSearchParams();
 
   // Imposta la tab iniziale in base al parametro della query oppure usa "Orders" come default
   const initialTab = searchParams.get("tab") || "shop";
   const [activeTab, setActiveTab] = useState(initialTab);
-
-  interface User {
-    Nome: string;
-    Cognome: string;
-    Tipologia: string;
-    Email: string;
-    RS: string;
-    Indirizzo: string;
-    NumeroCivico: string;
-    Città: string;
-    CAP: string;
-    Paese: string;
-    IDIva: string;
-    CodiceFiscale: string;
-    CodiceSDI: string;
-    FlgComCom: string;
-    DataInserimento: string;
-    FlgEmailConfermata: boolean;
-    FlgControllatoPiva: boolean;
-    PEC?: string;
-  }
-
+  
   useEffect(() => {
     if (!userId) {
       router.push(`/${lang}/login`);
-    } else {
-      fetch(
-        `https://php.leone.it/api/ws_leone/GetUser.php?IN_USERID=${userId}`,
-        {
-          headers: {
-            Authorization:
-              "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc",
-          },
-        }
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          setData(result.ReturnedObject);
-          setUserData(result.ReturnedObject);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
     }
-  }, [userId, router, setUserData, lang]);
+  }, [userId, router, lang]);
 
   // Aggiorna activeTab se il parametro della query cambia
   useEffect(() => {
@@ -123,12 +83,12 @@ const PersonalArea = () => {
             Logout
           </button>
         </div>
-        {data ? (
+        {userData ? (
           <>
             {(() => {
               switch (activeTab) {
                 case "profile":
-                  return <UserData data={data} />;
+                  return <UserData data={userData} />;
                 case "orders":
                   return (
                     <CartProvider products={[]}>

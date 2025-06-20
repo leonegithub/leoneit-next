@@ -40,6 +40,7 @@ export default function Header({
 }: HeaderClientProps) {
   const [show, setShow] = useState(false);
   const { userId, userData } = useAuth();
+  console.log("userId:", userId, "userData:", userData);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
