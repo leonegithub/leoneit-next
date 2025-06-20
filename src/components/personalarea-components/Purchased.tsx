@@ -69,7 +69,7 @@ const chevron = isOpen ? <svg className="w-4 h-4" aria-hidden="true" xmlns="http
     
 return (
     <>
-        <h1 className="blue my-4 flex items-center">3D Leone Designer <span onClick={() => setIsOpen(!isOpen)} className="ms-3">{chevron}</span></h1>
+        <h1 onClick={() => setIsOpen(!isOpen)} className="blue bg-grey px-3 py-2 rounded my-4 flex items-center">3D Leone Designer <span className="ms-3">{chevron}</span></h1>
         {isOpen ? (
         <div className="relative overflow-x-auto sm:rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
