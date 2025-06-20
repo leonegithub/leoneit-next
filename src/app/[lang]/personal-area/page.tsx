@@ -11,7 +11,8 @@ import ShopCardPA from "@/components/ShopCardPA";
 import DDDAR from "./3DAR.png";
 import LeafAR from "./LeafAR2.png";
 import SympAR from "./SympAR3.png";
-import Purchased from "@/components/purchased-components/Purchased";
+import Purchased from "@/components/personalarea-components/Purchased";
+import EssenzaPurchased from "@/components/personalarea-components/EssenzaPurchased";
 
 const PersonalArea = () => {
   const router = useRouter();
@@ -125,7 +126,10 @@ const PersonalArea = () => {
                   );
                   case "purchased":
                     return (
+                      <>
                       <Purchased IDUser={userId} />
+                      <EssenzaPurchased IDUser={userId} />
+                      </>
                     )
                 default:
                   return null;

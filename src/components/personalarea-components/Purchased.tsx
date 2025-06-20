@@ -34,6 +34,7 @@ function Purchased({ IDUser }: { IDUser: string | null }) {
     const [result, setResult] = useState<PurchasedObject[] | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [isOpen, setIsOpen] = useState<boolean>(true);
 
     useEffect(() => {
     if (!IDUser) {
@@ -48,7 +49,6 @@ function Purchased({ IDUser }: { IDUser: string | null }) {
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log("DATA:", data);
         setResult((data.ReturnedObject as PurchasedObject[]).filter((item) => item.FlgAttiva === true));
         setLoading(false);
     })
@@ -60,10 +60,17 @@ function Purchased({ IDUser }: { IDUser: string | null }) {
 
 if (loading) return <div className="py-4"><Spinner /></div>;
 if (error) return <div>Errore: {error}</div>;
+
+const chevron = isOpen ? <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/>
+</svg> : <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"/>
+</svg>
     
 return (
     <>
-        <h1 className="blue py-4">{IDGruppo === 1 ? "3D Leone Designer" : null}</h1>
+        <h1 className="blue my-4 flex items-center">3D Leone Designer <span onClick={() => setIsOpen(!isOpen)} className="ms-3">{chevron}</span></h1>
+        {isOpen ? (
         <div className="relative overflow-x-auto sm:rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -141,6 +148,7 @@ return (
                 </tbody>
             </table>
         </div>
+        ) : null }
     </>
 );
 }
