@@ -3,6 +3,8 @@ import Button from "@/components/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Lavoro from './Lavora con noi.png'
+import Image from "next/image";
 
 export default function LavoraConNoiClient({ lang }: { lang: "it" | "en" }) {
   const router = useRouter();
@@ -16,6 +18,10 @@ export default function LavoraConNoiClient({ lang }: { lang: "it" | "en" }) {
   if (lang !== "it") return null;
 
   return (
+    <>
+    <div className="img-container">
+      <Image src={Lavoro} alt="foto-lavoro" />
+    </div>
     <div className="container pt-4">
       <h1 className="blue font-bold pb-2">Lavora con noi</h1>
       <div className="description">
@@ -66,5 +72,6 @@ export default function LavoraConNoiClient({ lang }: { lang: "it" | "en" }) {
         </Link>
       </div>
     </div>
+    </>
   );
 }

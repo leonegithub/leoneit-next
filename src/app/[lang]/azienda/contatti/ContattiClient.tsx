@@ -5,6 +5,8 @@ import LoadingButton from "@/components/LoadingButton";
 import { ToastContainer, toast } from "react-toastify";
 import React, { useState, FormEvent } from "react";
 import "./style.css";
+import Image from "next/image";
+import ContattiImg from './Contatti.png'
 
 const offices = [
   "Vendite Italia",
@@ -71,8 +73,11 @@ function ContattiClient({ dict }: {  lang: string, dict: ContattiDictionary }) {
 
   return (
     <>
+        <div className="img-container">
+          <Image src={ContattiImg} alt="contatti" />
+        </div>
       <div className="contatti container mx:auto">
-        <h1 className="py-4 blue">{dict.contatti.title}</h1>
+        <h1 className="pt-5 blue">{dict.contatti.title}</h1>
         <div className="row py-4 ">
           <div className="col-sm-6 col-12">
             <h2 className="blue sigla font-bold w-400 pb-4">Leone S.p.A. </h2>

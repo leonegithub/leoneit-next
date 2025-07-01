@@ -16,10 +16,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+
       max-height: 100%;
-      font-size: calc(var(--unita-base) * 2);
-      background-color: var(--grigio);
+
     }
 
     .right {
