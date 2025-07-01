@@ -84,7 +84,7 @@ const ReteVenditeOrtodonzia = [
 return (
     <div className="container">
       <h1 className="blue font-bold py-3">Rete di distribuzione Italia Ortodonzia</h1>
-      <p>Tutti i Depositi Dentali italiani sono in grado di fornire entro 48 ore l'intera gamma dei nostri prodotti di Ortodonzia e Materiali Rigenerativi.
+      <p>Tutti i Depositi Dentali italiani sono in grado di fornire entro 48 ore l&apos;intera gamma dei nostri prodotti di Ortodonzia e Materiali Rigenerativi.
 <br /> Per i prodotti di Implantologia consultare la mappa dei distributori. 
 Il reparto Vendite Leone è sempre a disposizione per soddisfare qualsiasi vostra ulteriore domanda, assistenza e urgenza.
         </p>
