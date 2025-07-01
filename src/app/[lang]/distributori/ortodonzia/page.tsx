@@ -80,45 +80,80 @@ const ReteVenditeOrtodonzia = [
  
 
 
+
 return (
     <div className="container">
       <h1 className="blue font-bold py-3">Rete di distribuzione Italia Ortodonzia</h1>
-      <p>Tutti i Depositi Dentali italiani sono in grado di fornire entro 48 ore l’intera gamma dei nostri prodotti di Ortodonzia e Materiali Rigenerativi.
+      <p>Tutti i Depositi Dentali italiani sono in grado di fornire entro 48 ore l'intera gamma dei nostri prodotti di Ortodonzia e Materiali Rigenerativi.
 <br /> Per i prodotti di Implantologia consultare la mappa dei distributori. 
 Il reparto Vendite Leone è sempre a disposizione per soddisfare qualsiasi vostra ulteriore domanda, assistenza e urgenza.
         </p>
-      <div className="rete-vendita-implantologia py-4 flex">
-        <ul className="text-lg w-full">
+      <div className="rete-vendita-implantologia py-4">
         <h4 className="blue pb-3 font-bold">Rete vendita Ortodonzia</h4>
-          {ReteVenditeOrtodonzia.map((venditore, index) => (
-            <li className="py-1" key={index}>
-              <strong>{venditore.ruolo}</strong>
-              {venditore.nome && <> - {venditore.nome}</>}
-              <br />
-              {venditore.telefono && (
-                <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.telefono}</span>
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <ul className="text-lg">
+              {ReteVenditeOrtodonzia.slice(0, Math.ceil(ReteVenditeOrtodonzia.length / 2)).map((venditore, index) => (
+                <li className="py-3 border-b border-gray-200" style={{height: 140}} key={index}>
+                  <strong>{venditore.ruolo}</strong>
+                  {venditore.nome && <> - {venditore.nome}</>}
                   <br />
-                </>
-              )}
-              {venditore.cellulare && (
-                <>
-                  <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.cellulare}</span>
+                  {venditore.telefono && (
+                    <>
+                      <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.telefono}</span>
+                      <br />
+                    </>
+                  )}
+                  {venditore.cellulare && (
+                    <>
+                      <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.cellulare}</span>
+                      <br />
+                    </>
+                  )}
+                
+                  {venditore.email && (
+                    <>
+                      <span>
+                        <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
+                      </span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-12 col-md-6">
+            <ul className="text-lg">
+              {ReteVenditeOrtodonzia.slice(Math.ceil(ReteVenditeOrtodonzia.length / 2)).map((venditore, index) => (
+                <li className="py-3 border-b border-gray-200" style={{height: 140}} key={index + Math.ceil(ReteVenditeOrtodonzia.length / 2)}>
+                  <strong>{venditore.ruolo}</strong>
+                  {venditore.nome && <> - {venditore.nome}</>}
                   <br />
-                </>
-              )}
-            
-              {venditore.email && (
-                <>
-                  <span>
-                    <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
-                  </span>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-      
+                  {venditore.telefono && (
+                    <>
+                      <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.telefono}</span>
+                      <br />
+                    </>
+                  )}
+                  {venditore.cellulare && (
+                    <>
+                      <span><i className="fa-solid blue fa-phone-volume"></i> {venditore.cellulare}</span>
+                      <br />
+                    </>
+                  )}
+                
+                  {venditore.email && (
+                    <>
+                      <span>
+                        <i className="fa-solid blue fa-envelope"></i> <a className="underline" href={`mailto:${venditore.email}`}>{venditore.email}</a>
+                      </span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
