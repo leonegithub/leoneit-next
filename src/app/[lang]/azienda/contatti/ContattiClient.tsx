@@ -86,13 +86,14 @@ function ContattiClient({ dict }: {  lang: string, dict: ContattiDictionary }) {
             <div className="upper">
               <ul>
                 <li>
-                  Via P. a Quaracchi, 50 - 50019 Sesto Fiorentino, Firenze{" "}
-                  <br />
-                  P. IVA 01686960483 Uff. Reg. Imprese Firenze n. 01686960483
+                  Via P. a Quaracchi
                 </li>
-                <li> (805) 487-9860</li>
+                <li>
+                  50019 Sesto Fiorentino – Firenze
+                </li>
+                <li>Telefono: +39.055.30441</li>
                 <a href="mailto:info@leone.it">
-                  <li className="underline">info@leone.com</li>
+                  <li className="underline">info@leone.it</li>
                 </a>
               </ul>
             </div>
