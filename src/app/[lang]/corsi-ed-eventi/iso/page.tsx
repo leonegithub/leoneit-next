@@ -48,29 +48,29 @@ export default function Iso() {
         <Image src={IsoPic} alt="isopic" />
       </div>
       <div className="container">
-        <div className="sezione-uno">
+          <div className="sezione-uno">
           <h1 className="blue font-bold mt-5 mb-2">ISO - Istituto Studi Odontoiatrici</h1>
           <p>
-            L'Istituto Studi Odontoiatrici, divisione scientifica e centro
+            L&apos;Istituto Studi Odontoiatrici, divisione scientifica e centro
             formazione della società Leone, opera su tutto il territorio
-            nazionale con lo scopo di promuovere e divulgare l'ortodonzia e
-            l'implantologia a livelli sempre più elevati. La sede di Firenze,
+            nazionale con lo scopo di promuovere e divulgare l&apos;ortodonzia e
+            l&apos;implantologia a livelli sempre più elevati. La sede di Firenze,
             nata nel 1982, è strutturata su due piani con una superficie
             complessiva di 1.000 mq. ed in quasi 40 anni di attività ha ospitato
-            circa 50.000 corsisti. L'ISO offre un programma completo di corsi
-            residenziali e online, per il medico-chirurgo, l'odontoiatra, lo
+            circa 50.000 corsisti. L&apos;ISO offre un programma completo di corsi
+            residenziali e online, per il medico-chirurgo, l&apos;odontoiatra, lo
             specialista in odontostomatologia ed ortognatodonzia. Sono inoltre
-            organizzati corsi dedicati agli odontotecnici e all'insegnamento
+            organizzati corsi dedicati agli odontotecnici e all&apos;insegnamento
             della merceologia ortodontica e implantologica per gli operatori
             commerciali italiani ed esteri.
           </p>
         </div>
         <div className="sezione-due">
           <h1 className="blue font-bold mt-4 mb-2">Struttura all&apos;avanguardia</h1>
-          <p className="mb-5">
+           <p className="mb-5">
             Il primo piano, oltre ad accogliere i locali riservati ai servizi di
             ricevimento e di segreteria, è completamente dedicato alle aule
-            d'insegnamento: - studio dentistico attrezzato con 3 riuniti per
+            d&apos;insegnamento: - studio dentistico attrezzato con 3 riuniti per
             dimostrazioni live di interventi ortodontici e implantologici su
             pazienti - annessa una sala da 40 posti per i medici che partecipano
             visivamente agli interventi - telecamere endorali ed extraorali
@@ -80,9 +80,9 @@ export default function Iso() {
             recentemente anche di ambiente Active Classroom, ovvero un sistema
             integrato di lavagna interattiva multimediale Active Board e
             risponditori Active Expressions utili alla partecipazione attiva
-            durante il corso Al secondo piano: - Aula Magna "Marco Pozzi" che
+            durante il corso Al secondo piano: - Aula Magna &quot;Marco Pozzi&quot; che
             accoglie 250 congressisti. La sala è dotata di tutti i dispositivi
-            multimediali. Gli strumenti didattici di cui l'Istituto Studi
+            multimediali. Gli strumenti didattici di cui l&apos;Istituto Studi
             Odontoiatrici è dotato fanno sì che le lezioni, svolte da relatori
             di indiscussa esperienza, offrano ai partecipanti la possibilità di
             apprezzarne appieno la validità, traendone il massimo profitto.
