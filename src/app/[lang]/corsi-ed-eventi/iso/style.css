@@ -1,4 +1,5 @@
 .iso-info {
+  min-height: var(--altezza-corpo);
 
   .img-container {
     pointer-events: all;
@@ -12,13 +13,10 @@
 
   .iso-contatti {
     .left {
-
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       max-height: 100%;
-
     }
 
     .right {
@@ -29,6 +27,35 @@
     .iso-logo {
       object-fit: cover;
     }
+  }
+
+  /* Stili per le card dei corsi */
+  .sezione-corsi-evidenza {
+    h5 {
+      text-align: center;
+      background-color: var(--colore-primario);
+      margin-bottom: 0 !important;
+      color: var(--bianco);
+      padding: var(--unita-base) 0;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.download-magazines {
+  background-color: var(--grigio);
+  justify-content: space-between;
+}
+
+.download-link{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  img {
+    object-fit: cover;
   }
 }
 
