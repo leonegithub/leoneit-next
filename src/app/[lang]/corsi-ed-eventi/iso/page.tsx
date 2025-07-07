@@ -9,7 +9,6 @@ import corsoAllineatori from './Corso Avanzato Allineatori - Marzo 2025.png';
 import corsoCelli from './Corso Avanzato Celli-Fortini social.png';
 import corsoChirurgia from './Corso Chirurgia Parodontale_Milano 2025.png';
 import corsoOrtognatodonzia from './Corso clinico di ortodonzia 2025 social.png';
-import corsoMAD from './Corso MAD Odontoiatri 2025 Firenze.png';
 
 export default function Iso() {
   const corsiInEvidenza = [
