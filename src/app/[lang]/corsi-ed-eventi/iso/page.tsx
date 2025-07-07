@@ -93,9 +93,9 @@ export default function Iso() {
 
         
         {/* Sezione Corsi in Evidenza */}
-        <div className="sezione-corsi-evidenza bg-grey mb-5 pb-5 pt-1">
-          <div className="container">
-          <h1 className="blue font-bold mt-5 mb-4">Corsi in Evidenza</h1>
+        <div className="sezione-corsi-evidenza mb-5">
+          <div className="container pb-3">
+          <h1 className="blue font-bold mb-4">Corsi in Evidenza</h1>
           <div className="grid gap-5 my-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {corsiInEvidenza.map((corso, index) => (
               <div
