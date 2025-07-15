@@ -30,6 +30,10 @@
   background-color: var(--colore-primario);
 }
 
+.bg-red {
+  background-color: var(--colore-secondario);
+}
+
 .grey {
   color: var(--grigio);
 }
