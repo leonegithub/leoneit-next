@@ -48,20 +48,21 @@ export default function Relatori() {
   }, [selectedValue]);
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="blue font-bold py-6">Relatori</h1>
-      <div className="flex flex-col md:flex-row gap-8">
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-blue-900 mb-8">Relatori</h1>
+      
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}
-        <aside className="md:w-1/4 w-full bg-white rounded-xl">
-          <form>
+        <aside className="lg:w-1/4 w-full">
+          <div className="bg-white rounded-lg border p-6">
             <label htmlFor="sezione" className="block mb-4 font-semibold text-blue-900 text-lg">
-              Seleziona sezione
+              Filtra per sezione
             </label>
             <select
               id="sezione"
               value={selectedValue}
               onChange={handleChange}
-              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 mb-4 focus:ring-blue-500 focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-3 mb-4 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
             >
               <option value="">Tutte le sezioni</option>
               <option value="ortodonzia">Ortodonzia</option>
@@ -69,46 +70,47 @@ export default function Relatori() {
             </select>
             <button
               type="button"
-              className="underline text-blue-700 hover:text-blue-900 transition"
+              className="text-sm text-blue-700 hover:text-blue-900 underline transition-colors"
               onClick={resetFilter}
             >
               Resetta filtri
             </button>
-          </form>
+          </div>
         </aside>
+
         {/* Lista relatori */}
-        <section className="md:w-3/4 w-full">
+        <section className="lg:w-3/4 w-full">
           {isLoading ? (
-            <div className="flex justify-center items-center h-40">
-              <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-500" />
+            <div className="flex justify-center items-center h-64">
+              <div className="animate-spin rounded-full h-12 w-12 border-2 border-blue-200 border-t-blue-600" />
             </div>
           ) : data.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {data.map((relatore) => (
-                <div key={relatore.id} className="bg-white rounded-xl transition-shadow p-6 flex flex-col items-center text-center h-full">
-                    <Link
-                      key={relatore.id}
-                      href={`relatori/${relatore.id}`}
-                      className="group flex flex-column items-center cursor-pointer"
-                    >
-                  <Image
+                <Link
+                  key={relatore.id}
+                  href={`relatori/${relatore.id}`}
+                  className="group block"
+                >
+                  <div className="bg-white rounded-lg  border p-6 text-center h-full">
+                    <Image
                       src="https://fastly.picsum.photos/id/581/200/200.jpg?hmac=l2PTQyeWhW42zIrR020S5LHZ2yrX63cSOgZqpeWM0BA"
                       alt={`${relatore.nome} ${relatore.cognome}`}
-                      width={250}
-                      height={250}
-                      className="rounded-full object-cover mb-4 border-4 border-blue-100 group-hover:border-blue-400 transition
-                      "
+                      width={120}
+                      height={120}
+                      className="rounded-full object-cover mx-auto mb-4 border-2 border-gray-100 group-hover:border-blue-300 transition-colors"
                     />
-                    <div className="font-semibold text-blue-900 text-lg mb-1 group-hover:text-blue-700 transition">
+                    <h3 className="font-semibold text-blue-900 text-lg group-hover:text-blue-700 transition-colors">
                       {relatore.appellativo} {relatore.nome} {relatore.cognome}
-                    </div>
-                </Link>
+                    </h3>
                   </div>
+                </Link>
               ))}
             </div>
           ) : (
-            <div className="text-center text-gray-500 py-10">
-              <h4>Nessun relatore trovato.</h4>
+            <div className="text-center bg-white rounded-lg  border p-12">
+              <h4 className="text-gray-600 text-lg">Nessun relatore trovato</h4>
+              <p className="text-gray-500 text-sm mt-2">Prova a modificare i filtri di ricerca</p>
             </div>
           )}
         </section>
