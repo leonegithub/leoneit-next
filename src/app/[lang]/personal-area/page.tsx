@@ -116,7 +116,7 @@ const PersonalArea = () => {
                         />
                         <ShopCardPA
                           text="3D Leone"
-                          link="https://3dleone.it"
+                          link="personal-area/shop/3d-leone"
                           linkText="Your licence"
                           image={DDDAR}
                           descText="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
