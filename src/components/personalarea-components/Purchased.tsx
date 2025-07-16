@@ -42,7 +42,7 @@ function Purchased({ IDUser }: { IDUser: string | null }) {
         setLoading(false);
         return;
     }
-    fetch(`https://php.leone.it/api/ws_leone/GetUserLicence.php?IDUser=167&IDGruppo=${IDGruppo}`, {
+    fetch(`https://php.leone.it/api/ws_leone/GetUserLicence.php?IDUser=${IDUser}&IDGruppo=${IDGruppo}`, {
         headers: {
             Authorization: "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc"
         }
