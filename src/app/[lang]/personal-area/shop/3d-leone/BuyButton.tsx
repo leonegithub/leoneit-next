@@ -13,7 +13,7 @@ function BuyButton({ idUser, idItem }: {idUser: string, idItem: number }) {
     const [, setData] = useState<BuyButtonProps>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     
-    const handleBuy = async () => {
+    async function handleBuy() {
         setIsLoading(true);
 
         const url = new URL(`https://php.leone.it/api/ws_leone/AddOrder-GetPayLink.php`);
