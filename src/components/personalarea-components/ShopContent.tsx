@@ -7,11 +7,6 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { removeCookie } from '@/utils/cookies';
 
-interface LoggedUserProps {
-  flg_login: number
-  ReturnedObject: ShopItem
-}
-
 interface ShopItem {
   IDItem: number;
   Descrizione: string;
