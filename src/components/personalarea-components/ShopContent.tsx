@@ -3,6 +3,14 @@
 import Spinner from '@/components/spinner';
 import { useEffect, useState } from 'react';
 import BuyButton from './BuyButton';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { removeCookie } from '@/utils/cookies';
+
+interface LoggedUserProps {
+  flg_login: number
+  ReturnedObject: ShopItem
+}
 
 interface ShopItem {
   IDItem: number;
@@ -23,6 +31,8 @@ interface ShopContentProps {
 export default function ShopContent({ idUser, idGruppo }: ShopContentProps) {
   const [data, setData] = useState<{ ReturnedObject: ShopItem[] } | null>(null);
   const [loading, setLoading] = useState(true);
+  const { setUserId, setUserData } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,14 +46,22 @@ export default function ShopContent({ idUser, idGruppo }: ShopContentProps) {
 
         setData(result);
         setLoading(false);
+
+        if (result.flg_login !== 1) {
+          removeCookie("idUser");
+          setUserId(null);
+          setUserData(null);
+          router.push("it/login");
+          return;
+        }
+
       } catch (error) {
         console.error('Error fetching shop data:', error);
         setLoading(false);
       }
     };
-
     fetchData();
-  }, [idUser]);
+  }, [idUser, idGruppo, setUserId, setUserData, router]);
 
   if (loading) return <Spinner />
 
