@@ -2,6 +2,7 @@
 
 import Spinner from '@/components/spinner';
 import { useEffect, useState } from 'react';
+import BuyButton from './BuyButton';
 
 interface ShopItem {
   IDItem: number;
@@ -31,6 +32,7 @@ export default function ShopContent({ idUser, lang }: ShopContentProps) {
           }
         });
         const result = await response.json();
+
         setData(result);
         setLoading(false);
       } catch (error) {
@@ -88,11 +90,7 @@ export default function ShopContent({ idUser, lang }: ShopContentProps) {
                   {item.PrezzoIta} {item.SimboloValuta}
                 </td>
                 <td className="px-6 py-4">
-                  <button 
-                    className="text-white cursor-pointer bg-blue bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                  >
-                    {lang === 'it' ? 'Acquista' : lang === 'en' ? 'Buy' : 'Comprar'}
-                  </button>
+                 <BuyButton idItem={item.IDItem} idUser={idUser}/>
                 </td>
               </tr>
             ))}
