@@ -43,9 +43,7 @@ function BuyButton({ idUser, idItem }: {idUser: string, idItem: number }) {
             toast.error('Errore durante l\'acquisto');
             console.error(error);
         } finally {
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 5000);
+            setIsLoading(false);
         }
     };
 
