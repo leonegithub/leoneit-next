@@ -19,7 +19,7 @@ interface ShopContentProps {
   idUser: string;
 }
 
-export default function ShopContent({ idUser, lang }: ShopContentProps) {
+export default function ShopContent({ idUser }: ShopContentProps) {
   const [data, setData] = useState<{ ReturnedObject: ShopItem[] } | null>(null);
   const [loading, setLoading] = useState(true);
 
