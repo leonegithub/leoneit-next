@@ -13,22 +13,23 @@ import LeafAR from "./LeafAR2.png";
 import SympAR from "./SympAR3.png";
 import Purchased from "@/components/personalarea-components/Purchased";
 import EssenzaPurchased from "@/components/personalarea-components/EssenzaPurchased";
+import Shop3DLeone from "@/components/personalarea-components/Shop3DLeone";
+import ShopEssenza from "@/components/personalarea-components/ShopEssenza";
 
 const PersonalArea = () => {
   const router = useRouter();
   const params = useParams();
-  const lang =
-    typeof params.lang === "string"
-      ? params.lang
-      : Array.isArray(params.lang)
-      ? params.lang[0]
+  const lang: 'it' | 'en' | 'es' =
+    typeof params.lang === "string" && ["it", "en", "es"].includes(params.lang)
+      ? params.lang as 'it' | 'en' | 'es'
+      : Array.isArray(params.lang) && ["it", "en", "es"].includes(params.lang[0])
+      ? params.lang[0] as 'it' | 'en' | 'es'
       : "it";
   const { userId, setUserId, userData, setUserData } = useAuth();
-  const tabs = ["shop", "purchased", "orders", "downloads", "profile"];
+  const tabs = ["Dashboard", "Purchased", "Downloads", "Profile", "Shop", "Prodotti d'ortodonzia"];
   const searchParams = useSearchParams();
 
-  // Imposta la tab iniziale in base al parametro della query oppure usa "Orders" come default
-  const initialTab = searchParams.get("tab") || "shop";
+  const initialTab = searchParams.get("tab") || "Dashboard";
   const [activeTab, setActiveTab] = useState(initialTab);
   
   useEffect(() => {
@@ -37,7 +38,6 @@ const PersonalArea = () => {
     }
   }, [userId, router, lang]);
 
-  // Aggiorna activeTab se il parametro della query cambia
   useEffect(() => {
     const urlTab = searchParams.get("tab");
     if (urlTab && urlTab !== activeTab) {
@@ -88,15 +88,15 @@ const PersonalArea = () => {
           <>
             {(() => {
               switch (activeTab) {
-                case "profile":
+                case "Profile":
                   return <UserData data={userData} />;
-                case "orders":
+                case "Prodotti d'ortodonzia":
                   return (
                     <CartProvider products={[]}>
                       <Cart searchParams={searchParams} />
                     </CartProvider>
                   );
-                case "shop":
+                case "Dashboard":
                   return (
                     <div className="container mt-2">
                       <div className="flex py-5 justify-between">
@@ -116,7 +116,7 @@ const PersonalArea = () => {
                         />
                         <ShopCardPA
                           text="3D Leone"
-                          link="personal-area/shop/3d-leone"
+                          link="https://3dleone.it"
                           linkText="Your licence"
                           image={DDDAR}
                           descText="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
@@ -124,13 +124,20 @@ const PersonalArea = () => {
                       </div>
                     </div>
                   );
-                  case "purchased":
+                  case "Purchased":
                     return (
                       <>
                       <Purchased IDUser={userId} />
                       <EssenzaPurchased IDUser={userId} />
                       </>
                     )
+                    case "Shop":
+                      return (
+                        <>
+                        <Shop3DLeone lang={lang} />
+                        <ShopEssenza lang={lang} />
+                        </>
+                      )
                 default:
                   return null;
               }

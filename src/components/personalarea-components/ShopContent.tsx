@@ -17,16 +17,17 @@ interface ShopItem {
 interface ShopContentProps {
   lang: "it" | "en" | "es";
   idUser: string;
+  idGruppo: string;
 }
 
-export default function ShopContent({ idUser }: ShopContentProps) {
+export default function ShopContent({ idUser, idGruppo }: ShopContentProps) {
   const [data, setData] = useState<{ ReturnedObject: ShopItem[] } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://php.leone.it/api/ws_leone/GetItemList.php?IDUser=${idUser}&IDGruppo=1`, {
+        const response = await fetch(`https://php.leone.it/api/ws_leone/GetItemList.php?IDUser=${idUser}&IDGruppo=${idGruppo}`, {
           headers: {
             Authorization: 'Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc'
           }
@@ -44,13 +45,10 @@ export default function ShopContent({ idUser }: ShopContentProps) {
     fetchData();
   }, [idUser]);
 
-  if (loading) return <div className='container pt-4'>
-    <Spinner />
-  </div>;
+  if (loading) return <Spinner />
 
   return (
-    <div className="container">
-        <h1 className='blue font-bold py-4'>Oggetti acquistabili</h1>
+<>
     <div className="relative overflow-x-auto sm:rounded-lg">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -97,6 +95,8 @@ export default function ShopContent({ idUser }: ShopContentProps) {
         </tbody>
       </table>
     </div>
-    </div>
+
+</>
+
   );
 }
