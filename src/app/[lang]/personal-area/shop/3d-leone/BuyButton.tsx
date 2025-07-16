@@ -25,7 +25,6 @@ function BuyButton({ idUser, idItem }: {idUser: string, idItem: number }) {
 
         try {
             const response = await fetch(url, {
-                method: "POST",
                 headers: {
                     Authorization: "Bearer wlfca9P8Zn0zQt4zwpcDne4KJROqEOAzIy3dr0Eyxhbzhqz4ydddgjc"
                 }
