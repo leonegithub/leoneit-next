@@ -5,7 +5,7 @@ const getLocalizedHref = (lang: string, path: string) => `/${lang}${path}`;
 export const getOptions1 = async ({
   params,
 }: {
-  params: Promise<{ lang: "it" | "en" }>;
+  params: Promise<{ lang: "it" | "en" | "es" }>;
 }) => {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -45,7 +45,7 @@ export const getOptions1 = async ({
 export const getOptions4 = async ({
   params,
 }: {
-  params: Promise<{ lang: "it" | "en" }>;
+  params: Promise<{ lang: "it" | "en" | "es"}>;
 }) => {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -81,7 +81,7 @@ export const getOptions4 = async ({
 export const getOptions2 = async ({
   params,
 }: {
-  params: Promise<{ lang: "it" | "en" }>;
+  params: Promise<{ lang: "it" | "en" | "es"}>;
 }) => {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -129,7 +129,7 @@ export const getOptions2 = async ({
 export const getOptions3 = async ({
   params,
 }: {
-  params: Promise<{ lang: "it" | "en" }>;
+  params: Promise<{ lang: "it" | "en" | "es"}>;
 }) => {
   const { lang } = await params;
   const dict = await getDictionary(lang);

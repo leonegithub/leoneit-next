@@ -10,7 +10,7 @@ import {
 export default async function Header({
   params,
 }: {
-  params: { lang: "it" | "en" };
+  params: { lang: "it" | "en" | "es" };
 }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
