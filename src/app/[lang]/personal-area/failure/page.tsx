@@ -1,13 +1,15 @@
 "use client"
 
+import { use } from "react";
+
 interface FailurePageProps {
-  params: {
+  params: Promise<{
     lang: 'it' | 'en' | 'es'
-  }
+  }>  
 }
 
 export default function Failure({ params }: FailurePageProps) {
-  const { lang } = params;
+  const { lang } = use(params);
 
   const messages = {
     it: {

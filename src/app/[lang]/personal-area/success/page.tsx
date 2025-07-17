@@ -1,13 +1,15 @@
 "use client"
 
+import { use } from "react";
+
 interface SuccessPageProps {
-  params: {
+  params: Promise<{
     lang: 'it' | 'en' | 'es'
-  }
+  }>
 }
 
 export default function Success({ params }: SuccessPageProps) {
-  const { lang } = params;
+  const { lang } = use(params);
 
   const messages = {
     it: {
