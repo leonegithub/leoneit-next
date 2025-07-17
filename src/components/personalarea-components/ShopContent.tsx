@@ -46,7 +46,7 @@ export default function ShopContent({ idUser, idGruppo }: ShopContentProps) {
           removeCookie("idUser");
           setUserId(null);
           setUserData(null);
-          router.push("it/login");
+          router.push("login");
           return;
         }
 
