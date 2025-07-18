@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import madLocator from './mad_locator.jpg'
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
 import Spinner from '@/components/spinner';
 
