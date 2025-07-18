@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import madLocator from './mad_locator.jpg'
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
+import Spinner from '@/components/spinner';
 
 const containerStyle = {
   width: '100%',
@@ -46,7 +47,7 @@ export default function MapPage() {
       .catch(console.error);
   }, []);
 
-  if (!isLoaded) return <div>Caricamento mappa...</div>;
+  if (!isLoaded) return <div className='container'><h1 className='blue py-4 font-bold'>Laboratori abilitati M.A.D.</h1><Spinner /></div>;
 
   const validLocations = locations.filter(loc => {
     const lat = parseFloat(String(loc.latitude));

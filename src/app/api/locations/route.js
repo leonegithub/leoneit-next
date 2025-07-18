@@ -13,12 +13,12 @@ export async function GET() {
       database: process.env.DB_NAME,
     });
 
-    const [rows] = await connection.execute<any[]>('SELECT id, gps, regione, nome, indirizzo, localita, telefono, email, web FROM mad_locator');
+    const [rows] = await connection.execute('SELECT id, gps, regione, nome, indirizzo, localita, telefono, email, web FROM mad_locator');
     await connection.end();
 
     const data = rows.map((row) => {
       const [latitude, longitude] = row.gps
-        ? row.gps.split(',').map((coord: string) => parseFloat(coord.trim()))
+        ? row.gps.split(',').map((coord) => parseFloat(coord.trim()))
         : [null, null];
 
       return {
@@ -38,6 +38,6 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     console.error('Errore API /locations:', error);
-    return NextResponse.json({ error: 'Errore interno', message: (error as Error).message }, { status: 500 });
+    return NextResponse.json({ error: 'Errore interno', message: error.message }, { status: 500 });
   }
 }
