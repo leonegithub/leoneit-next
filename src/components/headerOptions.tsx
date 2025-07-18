@@ -121,7 +121,7 @@ export const getOptions2 = async ({
     },
     {
       label: dict.header.orthodontics.publications,
-      href: getLocalizedHref(lang, "/ortodonzia/pubblicazioni-ortodonzia"),
+      href: getLocalizedHref(lang, "/pubblicazioni/ortodonzia"),
     },
   ];
 };
@@ -169,7 +169,7 @@ export const getOptions3 = async ({
     },
     {
       label: dict.header.implantology.publications,
-      href: getLocalizedHref(lang, "/implantologia/pubblicazioni-ortodonzia"),
+      href: getLocalizedHref(lang, "/pubblicazioni/implantologia"),
     },
   ];
 };
