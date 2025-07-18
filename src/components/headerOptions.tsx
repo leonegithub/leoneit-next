@@ -117,7 +117,7 @@ export const getOptions2 = async ({
     },
     {
       label: dict.header.orthodontics.bulletin,
-      href: getLocalizedHref(lang, "/ortodonzia/bolletino"),
+      href: getLocalizedHref(lang, "/servizi/downloads/ortodonzia"),
     },
     {
       label: dict.header.orthodontics.publications,
@@ -157,7 +157,7 @@ export const getOptions3 = async ({
     },
     {
       label: dict.header.implantology.xcn,
-      href: getLocalizedHref(lang, "/implantologia/xcn-news"),
+      href: getLocalizedHref(lang, "/servizi/downloads/implantologia"),
     },
     {
       label: dict.header.implantology.team,
